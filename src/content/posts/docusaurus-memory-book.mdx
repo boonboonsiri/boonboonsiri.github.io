@@ -1,0 +1,102 @@
+export const metadata = {
+  title: 'Building a scrapbook using Docusaurus',
+  description: 'Notes on building a digital scrapbook and why I chose Docusaurus.',
+  date: '2024-01-03',
+  readingTime: '5 min read',
+  tags: ['project', 'engineering']
+};
+
+I guess here's my first blog post, which was the reason I wanted to build this personal site in the first place. A project I wanted to build recently was building a digital scrapbook for me and my girlfriend. A means to look back on our memories. With our data scattered across many mediums, ie photos on WhatsApp, Messenger, Discord, Google Photos, and of course locally, I wanted a way that we could curate exactly what we remembered ourselves. Of course there's always the standard photobook/scrapbook but as a software engineer and slight data hoarder 💀 I wanted to do this in a digital medium. That way we could see the memories everywhere without concern of losing or destroying the scrapbook overtime. From this came the idea.
+
+Not going to provide the link to the site though since I don't want to dox our relationship lol
+
+
+
+![Example image from the site](https://www.dropbox.com/scl/fi/2yoo5195nx1uwckpuk7r2/image-984bd98e1ae09e54298a8adeb2a1acbc.png?rlkey=yyhl6y2vkcflwj361o0rpvtj1&raw=1)
+
+### 2. Having the data be open/future proofing the project
+
+One of goals of this project was to make sure our photos/info remained as open as possible. I didn't like that all of our information was already scattered across many apps so ideally I liked the idea of storing the journal to something as close as markdown/raw text as possible. That way, even if the provider suddenly changed their policies/pricing we could always migrate the journal elsewhere easily.
+
+
+### 3. Free or inexpensive
+
+Pretty self-explanatory.
+
+### 4. Collaboration
+
+Since this was a project for me and my girlfriend, I thought it would be neat if we could collaborate on it live together.
+
+### 5. Customizable
+
+This goal was less important but I liked the idea of being able to build new components and customize the entire experience if I so desired.
+
+With this I came up with three solutions: Using Docusaurus, Notion, or an markdown editor such as Obsidian. Basically the tradeoffs go down the line of Notion > Obsidian > Docusaurus of the general trade offs of user controlled vs ease of use.
+
+
+
+|            | Ease of Use | Future Proofing | Collaboration | Customizable |
+| ---------- | ----------- | --------------- | ------------- | ------------ |
+| Docusaurus | 1️⃣           | 2️⃣               | 2️⃣             | 3️⃣            |
+| Obsidian   | 2️⃣           | 3️⃣               | 2️⃣             | 1️⃣            |
+| Notion     | 3️⃣           | 1️⃣               | 3️⃣             | 1️⃣            |
+
+I landed on three possible approaches: Docusaurus, Notion, or a markdown editor like Obsidian.
+
+
+Now don't get me wrong, I think Notion is an amazing app, and I love what the Notion team has built choosing a huge emphasis on design. I think Notion would have been an ideal solution, however even though the pricing for this project was currently free the fact that the data was vaguely locked behind Notion's own functionality (though they do have an export function but I haven't tested this out that much) turned me away from it. This is during the time that I wanted to unify my entire stack and I prefer the idea of just having everything on one platform such as GitHub.
+
+Obsidian was another thought that I had. It provides essentially a souped up version of a markdown editor which is perfect for ease of use. You can obviously host this all using Git however, I still wanted us to be able to view the journal/scrapbook on mobile and while Obsidian has a phone app, I'm pretty sure for Obsidian to provide the syncing between Desktop and mobile there is a cost.
+
+This left Docusaurus. I work with Docusaurus at Radar and I always thought it was a nifty code base. I liked that it was essentially markdown however, you could customize it/build whatever component you liked to your React heart's content. In fact this very site is also built using Docusaurus as another good feature of Docusaurus is this very blog that I am writing on right now. Docusaurus is relatively easy due to the .mdx nature. It's maintained by Meta and stored as essentially markdown. Through git and live share features you could have collaboration and since it has React it's by far the most customizable.
+
+## Implementation
+
+### Tech stack
+
+These products probably do more than just this but this is what I use them for
+
+
+- 🦖 [Docusaurus](https://docusaurus.io/) — Meta's open-source documentation framework that lets you write `.mdx`, which is markdown with React support.
+- 💻 [GitHub](https://github.com/) — Pretty well known lol, history/hosting the project/collaboration.
+- 🔺 [Vercel](https://vercel.com/) — Easy way to host various projects including Docusaurus. You can also deploy using GitHub to make the stack even smaller but deploying via Vercel was a lot easier.
+
+Now I know one of my main points in my goals was not to be tied down to any provider yet here I am using both GitHub and Vercel however, I was more okay with this as obviously I'm just using git, and any static site provider which there will always be more.
+
+
+
+### General build
+
+I do not claim to be a Docusaurus expert, so there are probably better ways to do parts of this.
+
+For the most part, I followed the [official tutorial](https://docusaurus.io/docs), then customized the favicon, colors, and homepage. I removed the default blog where it was not needed and used `.scss` instead of plain `.css`.
+
+```css
+src/custom.scss
+
+:root {
+  --ifm-color-primary: #FF2A6B;
+  --ifm-color-primary-dark: #CC2255;
+  --ifm-color-primary-darker: #7F1535;
+  --ifm-color-primary-darkest: #7F3B50;
+  --ifm-color-primary-light: #FF77A0;
+  --ifm-color-primary-lighter: #F2ACC6;
+  --ifm-color-primary-lightest: #F2C2CF;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+```
+
+### Todo - Readd back in components
+
+
+## Thoughts
+I definitely do have some gripes about the projects as with any project. I notice that when I build out the photos I constantly want to be adding stickers and carousels and other things to make it look nicer. While I made it as easy as possible with just wrapping the component it's still a little bit of a tedious process. Ideally a drag and drop user interface would be the best, however those mostly only exist in WYSIWYG editors. Maybe I'll think of some way in the future to make this process feel even more streamlined.
+
+I also have some future ideas I have to put onto the site. I like the idea of placing a map of all the places we've been on the journal. Whether this be embedding a Google my map, or building on the components using some combination of open source mapping repos
+
+I also like the ideas of having videos, as I think a video captures feelings that photos don't but that would imply that I get comfortable with shooting video first.
+
+As an aside, overall I like the idea of having this blog. It incentivizes me to build more projects and learn more and communicate and story tell better. I liked in this blog post I have the room to talk about the how and why of implementations and I hope I can find more things to talk about in the future (and maybe some stuff that is not engineering specific).
+
+
