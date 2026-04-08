@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.0",
+    "@radarlabs/plugin-maps": "^1.1.0",
+    "maplibre-gl": "^5.22.0",
+    "radar-sdk-js": "^5.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-photo-album": "^3.5.1",

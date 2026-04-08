@@ -8,6 +8,7 @@ export default function Posts() {
     <section className="blog-index narrow-page">
       <header className="section-header">
         <h1>Posts</h1>
+
       </header>
 
       <div className="blog-list">
