@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://boonboonsiri.github.io/sitemap.xml
