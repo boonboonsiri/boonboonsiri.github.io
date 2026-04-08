@@ -4,6 +4,7 @@ import mdx from '@mdx-js/rollup';
 import remarkGfm from 'remark-gfm';
 
 export default defineConfig({
+  base: '/',
   plugins: [
     {
       enforce: 'pre',
