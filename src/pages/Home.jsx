@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import profileImage from '../assets/profile.png';
+import profileImage from '../assets/sophiecrop.jpeg';
 
 export default function Home() {
   return (
     <section className="home-page">
       <div className="home-portrait-wrap">
-        <img className="home-portrait" src="https://www.dropbox.com/scl/fi/byiuymx9elmj6zp49tpxo/sophiecrop.jpeg?rlkey=yyo9pf9kg81b7b2uvs848pdhv&st=dslp9w9z&raw=1"/>
+              <img className="home-portrait" src={profileImage} alt="Profile" />
       </div>
 
       <div className="home-copy">

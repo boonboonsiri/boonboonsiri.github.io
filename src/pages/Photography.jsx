@@ -9,7 +9,7 @@ export default function Photography() {
           <h1>Photography</h1>
         </header>
 
-        <ImageGrid photos={photos} />
+        <ImageGrid photos={photos.slice().reverse()} />
       </div>
     </section>
   );
