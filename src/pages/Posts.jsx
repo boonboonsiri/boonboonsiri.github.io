@@ -15,7 +15,7 @@ export default function Posts() {
         {posts.map((post) => (
           <article key={post.slug} className="blog-list-item">
             <h2 className="blog-list-title">
-              <Link className="blog-list-link" to={`/blog/${post.slug}`}>
+              <Link className="blog-list-link" to={post.url || `/posts/${post.slug}`}>
                 {post.title}
               </Link>
             </h2>

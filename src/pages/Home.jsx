@@ -14,7 +14,7 @@ export default function Home() {
           Hi! I&apos;m Boon, a software engineer at <Link to="https://radar.com">Radar</Link>.  Previously I graduated software engineering from the University of Waterloo in
           2024. I love coding, maps, reading, and may try to relearn how to play some instruments
           eventually. Check out my <Link to="/photography">photography learning curve</Link> and{' '}
-          <Link to="/blog">random stuff</Link> I find interesting.
+          <Link to="/posts">random stuff</Link> I find interesting.
         </p>
 
         <p className="home-links">

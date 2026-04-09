@@ -19,6 +19,7 @@ export const photos = [
     src: 'https://dl.dropboxusercontent.com/scl/fi/tdznl1d8otkfckrpvhsuo/image-40.png?rlkey=rbzyaalmr8qs1974uqnwm9y00',
     alt: 'image-40',
   },
+
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/0jxfsrvbycaob49avc9oe/image-38.png?rlkey=c72b7j9sup584hkq54fohvtrq',
     alt: 'image-38',
@@ -27,7 +28,10 @@ export const photos = [
     src: 'https://dl.dropboxusercontent.com/scl/fi/7ap7e89h140m1kllu0afe/image-35.png?rlkey=3can3l6w1mz0hetwpsnrshsko',
     alt: 'image-35',
   },
-
+  {
+    src: "https://dl.dropboxusercontent.com/scl/fi/2c62cg6qnrfw980tnpgvf/9293.jpg?rlkey=11cqoc4wgs0y0tx489r6nkz1f",
+    alt: "9293",
+  },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/geb7rrrw6l5nwutk0r5zi/image-27.png?rlkey=dn15ixjzty42dml597wrid4rt',
     alt: 'image-27',
@@ -65,7 +69,7 @@ export const photos = [
     alt: 'DSC03828',
   },
   {
-    src: 'https://dl.dropboxusercontent.com/scl/fi/4yoahj9tt0aeae0jsutf8/DSC04942.JPG?rlkey=di4h9wmytzp26gqqh3bh2y6fy',
+    src: 'https://dl.dropboxusercontent.com/scl/fi/t6dl99cr9rmybv3p7th9v/10790.jpg?rlkey=bjaz30t73ykwynw9fphnxm3tl',
     alt: 'DSC04942',
   },
   {
@@ -139,7 +143,7 @@ export const photos = [
     alt: 'DSC03756',
   },
   {
-    src: 'https://dl.dropboxusercontent.com/scl/fi/7zfh273idtnv6j0gi17kk/DSC05589newb.jpg?rlkey=y123lca1eu3p153mw6cuzccpt',
+    src: 'https://dl.dropboxusercontent.com/scl/fi/7uk6bz5h00ajj3carqzia/DSC05589newc.jpg?rlkey=txk9t92ign11kz6z2iacc5vrr',
     alt: 'DSC05589newb',
   },
   {

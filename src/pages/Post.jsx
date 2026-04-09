@@ -13,20 +13,20 @@ export default function Post() {
   const post = getPostBySlug(slug);
 
   if (!post) {
-    return <Navigate to="/blog" replace />;
+    return <Navigate to="/posts" replace />;
   }
 
   const { Component } = post;
 
   return (
     <article className="post-page narrow-page">
-      <Link className="back-link" to="/blog">
-        ← Back to blog
+      <Link className="back-link" to="/posts">
+        ← Back to posts
       </Link>
 
       <header className="post-page__header">
         <p className="post-meta">
-          <span>{post.date}</span>
+          <span className="post-date">{post.date}</span>
         </p>
         <h1>{post.title}</h1>
       </header>

@@ -11,8 +11,8 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/photography" element={<Photography />} />
-        <Route path="/blog" element={<Posts />} />
-        <Route path="/blog/:slug" element={<Post />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts/:slug" element={<Post />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

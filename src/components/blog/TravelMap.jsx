@@ -227,7 +227,7 @@ export default function TravelMap() {
       style={{
         marginTop: '2rem',
         marginBottom: '2rem',
-        borderRadius: '8px',
+        borderRadius: '4px',
         overflow: 'hidden',
         border: '1px solid #e5e7eb',
       }}

@@ -20,6 +20,9 @@ function resolveDate(date) {
  * Optional helper for UI usage
  */
 export function getPostYear(post) {
+  if (post.date === 'current') {
+    return 'current';
+  }
   return resolveDate(post.date).getFullYear();
 }
 

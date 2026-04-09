@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 const navItems = [
   { to: '/photography', label: 'Photography' },
-  { to: '/blog', label: 'Blog' }
+  { to: '/posts', label: 'Posts' }
 ];
 
 export default function Navbar() {
@@ -27,6 +27,21 @@ export default function Navbar() {
               </NavLink>
             ))}
           </div>
+        </div>
+
+        {/* RIGHT SIDE LOGO */}
+        <div className="navbar-right">
+          <a
+            href="https://sophiec103.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/src/assets/logo.svg"
+              alt="Logo"
+              className="navbar-logo"
+            />
+          </a>
         </div>
       </nav>
     </header>
