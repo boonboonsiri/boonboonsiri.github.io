@@ -286,6 +286,48 @@ h3 {
 }
 
 /* ========================
+   BLOG INDEX
+======================== */
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding-top: 10px;
+}
+
+.blog-list-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.blog-list-title {
+  margin: 0;
+  line-height: 1.25;
+}
+
+.blog-list-link {
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.blog-list-link:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.blog-list-meta {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* ========================
    RESPONSIVE
 ======================== */
 @media (max-width: 1024px) {
