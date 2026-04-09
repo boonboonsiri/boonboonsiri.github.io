@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
+import logo from '../assets/logo.svg';
 
 const navItems = [
   { to: '/photography', label: 'Photography' },
@@ -37,7 +38,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
           >
             <img
-              src="../../src/assets/logo.svg"
+              src={logo}
               alt="Logo"
               className="navbar-logo"
             />
