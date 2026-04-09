@@ -37,7 +37,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
           >
             <img
-              src="/src/assets/logo.svg"
+              src="../../src/assets/logo.svg"
               alt="Logo"
               className="navbar-logo"
             />
