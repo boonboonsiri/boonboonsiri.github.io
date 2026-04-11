@@ -29,21 +29,6 @@ export default function Navbar() {
             ))}
           </div>
         </div>
-
-        {/* RIGHT SIDE LOGO */}
-        <div className="navbar-right">
-          <a
-            href="https://sophiec103.github.io"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={logo}
-              alt="Logo"
-              className="navbar-logo"
-            />
-          </a>
-        </div>
       </nav>
     </header>
   );

@@ -154,22 +154,7 @@ h3 {
   color: var(--link);
 }
 
-.navbar-right {
-  display: flex;
-  align-items: center;
-}
 
-.navbar-logo {
-  height: 36px;
-  width: auto;
-  display: block;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-
-  &:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-  }
-}
 
 /* ========================
    PAGE WRAPPER
@@ -234,6 +219,29 @@ h3 {
   flex-wrap: wrap;
   gap: 0.6rem;
   margin-top: 1.5rem;
+}
+
+.home-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.divider {
+  opacity: 0.5;
+}
+
+.inline-logo {
+  height: 18px;
+  width: auto;
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.inline-logo:hover {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 /* ========================
