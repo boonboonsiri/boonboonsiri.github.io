@@ -39,7 +39,7 @@ const posts = Object.entries(postModules)
   .sort((a, b) => resolveDate(b.date) - resolveDate(a.date));
 
 export function getAllPosts() {
-  return posts;
+  return posts.filter((post) => !post.hidden);
 }
 
 export function getPostBySlug(slug) {
