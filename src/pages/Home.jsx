@@ -17,7 +17,7 @@ export default function Home() {
         <h1>About</h1>
         <p>
           Hi! I&apos;m Boon, a software engineer at{' '}
-          <Link to="https://radar.com">Radar</Link>. Previously I graduated
+          <Link to="https://radar.com" target="_blank" rel="noreferrer">Radar</Link>. Previously I graduated
           software engineering from the University of Waterloo in 2024. I love
           coding, maps, reading, and may try to relearn how to play some
           instruments eventually. Check out my{' '}
