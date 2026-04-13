@@ -56,7 +56,7 @@ export default function Home() {
           </a>
           <spam> | </spam>
   <a
-    href="https://sophiec103.github.io"
+    href="https://sophiezychan.github.io"
     target="_blank"
     rel="noopener noreferrer"
   >
