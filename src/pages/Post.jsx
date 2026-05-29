@@ -3,7 +3,13 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { getPostBySlug } from '../lib/posts';
 
 const mdxComponents = {
-  a: (props) => <a {...props} target={props.href?.startsWith('http') ? '_blank' : undefined} rel={props.href?.startsWith('http') ? 'noreferrer' : undefined} />,
+  a: (props) => (
+    <a
+      {...props}
+      target={props.href?.startsWith('http') ? '_blank' : undefined}
+      rel={props.href?.startsWith('http') ? 'noreferrer' : undefined}
+    />
+  ),
   pre: (props) => <pre className="mdx-code-block" {...props} />,
   code: (props) => <code className="mdx-inline-code" {...props} />
 };
@@ -18,18 +24,25 @@ export default function Post() {
 
   const { Component } = post;
 
-  return (
-    <article className="post-page narrow-page">
-      <Link className="back-link" to="/posts">
-        ← Back to posts
-      </Link>
+  const wide = post.wide;
+  const hideCommon = post.hide_common;
 
-      <header className="post-page__header">
-        <p className="post-meta">
-          <span className="post-date">{post.date}</span>
-        </p>
-        <h1>{post.title}</h1>
-      </header>
+  return (
+    <article className={`post-page ${wide ? '' : 'narrow-page'}`}>
+      {!hideCommon && (
+        <>
+          <Link className="back-link" to="/posts">
+            ← Back to posts
+          </Link>
+
+          <header className="post-page__header">
+            <p className="post-meta">
+              <span className="post-date">{post.date}</span>
+            </p>
+            <h1>{post.title}</h1>
+          </header>
+        </>
+      )}
 
       <MDXProvider components={mdxComponents}>
         <div className="mdx-content">

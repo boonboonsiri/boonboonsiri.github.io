@@ -14,11 +14,11 @@ export default function Posts() {
       <div className="blog-list">
         {posts.map((post) => (
           <article key={post.slug} className="blog-list-item">
-            <h2 className="blog-list-title">
+            <h4 className="blog-list-title">
               <Link className="blog-list-link" to={post.url || `/posts/${post.slug}`}>
                 {post.title}
               </Link>
-            </h2>
+            </h4>
 
             <p className="blog-list-meta">
               <span>{getPostYear(post)}</span>
