@@ -27,17 +27,18 @@ export const books = [
     cover: "https://covers.openlibrary.org/b/isbn/9780399256752-L.jpg",
   },
   {
+    title: "All the Light We Cannot See",
+    author: "Anthony Doerr",
+    shelf: "favourites",
+    cover: "https://m.media-amazon.com/images/I/81WY6M9XikL.jpg",
+  },
+  {
     title: "Talking at Night",
     author: "Claire Daverley",
     shelf: "current",
     cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1681244420l/62583508.jpg",
   },
-  {
-    title: "All the Light We Cannot See",
-    author: "Anthony Doerr",
-    shelf: "current",
-    cover: "https://m.media-amazon.com/images/I/81WY6M9XikL.jpg",
-  },
+
   {
     title: "Crazy Rich Asians",
     author: "Kevin Kwan",
@@ -110,7 +111,7 @@ export const books = [
     title: "Eleanor & Park",
     author: "Rainbow Rowell",
     shelf: "YA",
-    cover: "https://covers.openlibrary.org/b/isbn/9781250053992-L.jpg",
+    cover: "https://m.media-amazon.com/images/I/71CY50T1sML._AC_UF1000,1000_QL80_.jpg",
   },
 
   {
@@ -137,25 +138,6 @@ export const books = [
     shelf: "YA",
     cover: "https://covers.openlibrary.org/b/isbn/9780142414934-L.jpg",
   },
-  {
-    title: "The Hunger Games",
-    author: "Suzanne Collins",
-    shelf: "YA",
-    cover: "https://m.media-amazon.com/images/I/61I24wOsn8L.jpg",
-  },
-  {
-    title: "Catching Fire",
-    author: "Suzanne Collins",
-    shelf: "YA",
-    cover: "https://upload.wikimedia.org/wikipedia/en/a/a2/Catching_Fire_%28Suzanne_Collins_novel_-_cover_art%29.jpg",
-  },
-  {
-    title: "Mockingjay",
-    author: "Suzanne Collins",
-    shelf: "YA",
-    cover: "https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Mockingjay.JPG/250px-Mockingjay.JPG",
-  },
-
   {
     title: "Champion",
     author: "Marie Lu",
@@ -194,24 +176,7 @@ export const books = [
     shelf: "YA",
     cover: "https://covers.openlibrary.org/b/isbn/9780062457790-L.jpg",
   },
-  {
-    title: "Divergent",
-    author: "Veronica Roth",
-    shelf: "YA",
-    cover: "https://covers.openlibrary.org/b/isbn/9780062024022-L.jpg",
-  },
-  {
-    title: "Insurgent",
-    author: "Veronica Roth",
-    shelf: "YA",
-    cover: "https://covers.openlibrary.org/b/isbn/9780062024046-L.jpg",
-  },
-  {
-    title: "Allegiant",
-    author: "Veronica Roth",
-    shelf: "YA",
-    cover: "https://covers.openlibrary.org/b/isbn/9780062024060-L.jpg",
-  },
+
   {
     title: "We Are Okay",
     author: "Nina LaCour",
@@ -226,18 +191,31 @@ export const books = [
     cover: "https://m.media-amazon.com/images/I/91oDZ5HyJsL._AC_UF1000,1000_QL80_.jpg",
   },
   {
+    title: "The Hunger Games",
+    author: "Suzanne Collins",
+    shelf: "YA",
+    cover: "https://m.media-amazon.com/images/I/61I24wOsn8L.jpg",
+  },
+  {
+    title: "Catching Fire",
+    author: "Suzanne Collins",
+    shelf: "YA",
+    cover: "https://upload.wikimedia.org/wikipedia/en/a/a2/Catching_Fire_%28Suzanne_Collins_novel_-_cover_art%29.jpg",
+  },
+  {
+    title: "Mockingjay",
+    author: "Suzanne Collins",
+    shelf: "YA",
+    cover: "https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Mockingjay.JPG/250px-Mockingjay.JPG",
+  },
+
+  {
     title: "If I Stay",
     author: "Gayle Forman",
     shelf: "YA",
     cover: "https://covers.openlibrary.org/b/isbn/9781101046340-L.jpg",
   },
 
-  {
-    title: "Thirteen Reasons Why",
-    author: "Jay Asher",
-    shelf: "YA",
-    cover: "https://covers.openlibrary.org/b/isbn/9781595141712-L.jpg",
-  },
   {
     title: "The Sun Is Also a Star",
     author: "Nicola Yoon",
@@ -255,7 +233,16 @@ export const books = [
     author: "Patrick Ness",
     shelf: "YA",
     cover: "https://m.media-amazon.com/images/I/61I-TI+IFoL._AC_UF1000,1000_QL80_.jpg",
-  }, {
+  },
+  {
+    title: "Kids of Appetite",
+    author: "David Arnold",
+    shelf: "YA",
+    cover: "https://m.media-amazon.com/images/I/71+naiFqOqL._AC_UF1000,1000_QL80_.jpg",
+  },
+
+
+  {
     title: "Since You've Been Gone",
     author: "Morgan Matson",
     shelf: "YA",
@@ -280,10 +267,34 @@ export const books = [
     cover: "https://m.media-amazon.com/images/I/81uhDKHfqwL.jpg",
   },
   {
+    "title": "Me and Earl and the Dying Girl",
+    "author": "Jesse Andrews",
+    "shelf": "YA",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781419701764-L.jpg"
+  },
+  {
     title: "Love and Other Train Wrecks",
     author: "Leah Konen",
     shelf: "YA",
     cover: "https://covers.openlibrary.org/b/isbn/9780062402509-L.jpg",
+  },
+  {
+    title: "Divergent",
+    author: "Veronica Roth",
+    shelf: "YA",
+    cover: "https://covers.openlibrary.org/b/isbn/9780062024022-L.jpg",
+  },
+  {
+    title: "Insurgent",
+    author: "Veronica Roth",
+    shelf: "YA",
+    cover: "https://covers.openlibrary.org/b/isbn/9780062024046-L.jpg",
+  },
+  {
+    title: "Allegiant",
+    author: "Veronica Roth",
+    shelf: "YA",
+    cover: "https://covers.openlibrary.org/b/isbn/9780062024060-L.jpg",
   },
 
   {
@@ -296,7 +307,7 @@ export const books = [
     title: "Let It Snow",
     author: "John Green, Maureen Johnson, Lauren Myracle",
     shelf: "YA",
-    cover: "https://covers.openlibrary.org/b/isbn/9780142412145-L.jpg",
+    cover: "https://m.media-amazon.com/images/I/71C4hf0CcOL.jpg",
   },
   {
     title: "Will Grayson, Will Grayson",
@@ -310,6 +321,7 @@ export const books = [
     shelf: "YA",
     cover: "https://covers.openlibrary.org/b/isbn/9781534408968-L.jpg",
   },
+
 
   {
     title: "A Study in Charlotte",
@@ -328,6 +340,12 @@ export const books = [
     author: "Brittany Cavallaro",
     shelf: "YA",
     cover: "https://covers.openlibrary.org/b/isbn/9780062398987-L.jpg",
+  },
+  {
+    title: "Thirteen Reasons Why",
+    author: "Jay Asher",
+    shelf: "YA",
+    cover: "https://m.media-amazon.com/images/I/81loEbyj18L._AC_UF1000,1000_QL80_.jpg",
   },
   {
     title: "Cinder",
@@ -382,7 +400,7 @@ export const books = [
     title: "That Time I Joined the Circus",
     author: "J.J. Howard",
     shelf: "YA",
-    cover: "https://covers.openlibrary.org/b/isbn/9780545433815-L.jpg",
+    cover: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/That_Time_I_Joined_the_Circus.jpg/250px-That_Time_I_Joined_the_Circus.jpg",
   },
   {
     title: "Flipped",
@@ -406,22 +424,22 @@ export const books = [
     title: "Let's Get Lost",
     author: "Adi Alsaid",
     shelf: "YA",
-    cover: "https://covers.openlibrary.org/b/isbn/9780373211241-L.jpg",
-  },
-  {
-    title: "Kids of Appetite",
-    author: "David Arnold",
-    shelf: "YA",
-    cover: "https://covers.openlibrary.org/b/isbn/9780451470782-L.jpg",
+    cover: "https://m.media-amazon.com/images/I/81dyaxWrbhL._AC_UF1000,1000_QL80_.jpg",
   },
 
-{
+  {
     title: "Tell Me Three Things",
     author: "Julie Buxbaum",
     shelf: "YA",
-  note: "Did I read this??",
+    note: "Did I read this??",
 
     cover: "https://covers.openlibrary.org/b/isbn/9780553535648-L.jpg",
+  },
+  {
+    "title": "Never Always Sometimes",
+    "author": "Adi Alsaid",
+    "shelf": "YA",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780373211548-L.jpg"
   },
   {
     title: "Life of Pi",
@@ -430,25 +448,25 @@ export const books = [
     cover: "https://covers.openlibrary.org/b/isbn/9780156030205-L.jpg",
   },
 
-{
-  title: "The 5th Wave",
-  author: "Rick Yancey",
-  shelf: "YA",
-  cover: "https://covers.openlibrary.org/b/isbn/9780399162411-L.jpg",
-},
-{
-  title: "Mosquitoland",
-  author: "David Arnold",
-  shelf: "YA",
-  cover: "https://m.media-amazon.com/images/I/91+F8qCiXuL.jpg",
-},
-{
-  title: "Seven Ways We Lie",
-  author: "Riley Redgate",
-  shelf: "YA",
-  cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1446761258i/26240663.jpg",
-},
-{
+  {
+    title: "The 5th Wave",
+    author: "Rick Yancey",
+    shelf: "YA",
+    cover: "https://covers.openlibrary.org/b/isbn/9780399162411-L.jpg",
+  },
+  {
+    title: "Mosquitoland",
+    author: "David Arnold",
+    shelf: "YA",
+    cover: "https://m.media-amazon.com/images/I/91+F8qCiXuL.jpg",
+  },
+  {
+    title: "Seven Ways We Lie",
+    author: "Riley Redgate",
+    shelf: "YA",
+    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1446761258i/26240663.jpg",
+  },
+  {
     "title": "Nick & Norah's Infinite Playlist",
     "author": "Rachel Cohn & David Levithan",
     "shelf": "YA",
@@ -466,7 +484,7 @@ export const books = [
     "shelf": "YA",
     "cover": "https://m.media-amazon.com/images/I/81+wIo8GaUL._AC_UF1000,1000_QL80_.jpg"
   },
-{
+  {
     "title": "My Heart and Other Black Holes",
     "author": "Jasmine Warga",
     "shelf": "YA",
@@ -478,19 +496,71 @@ export const books = [
     "shelf": "YA",
     "cover": "https://covers.openlibrary.org/b/isbn/9781595145512-L.jpg"
   },
-{
+  {
     "title": "P.S. I Like You",
     "author": "Kasie West",
     "shelf": "YA",
     "cover": "https://covers.openlibrary.org/b/isbn/9780545850971-L.jpg"
   },
-{
+  {
     "title": "Love, Life, and the List",
     "author": "Kasie West",
     "shelf": "YA",
     "cover": "https://covers.openlibrary.org/b/isbn/9780062675781-L.jpg"
   },
-{
+  {
+    "title": "Optimists Die First",
+    "author": "Susin Nielsen",
+    "shelf": "YA",
+    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1469405417i/30335388.jpg"
+  },
+  {
+    "title": "The Problem with Forever",
+    "author": "Jennifer L. Armentrout",
+    "shelf": "YA",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780373212057-L.jpg"
+  }, {
+    "title": "The Odds of Lightning",
+    "author": "Jocelyn Davies",
+    "shelf": "YA",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781481440530-L.jpg"
+  },
+  {
+    "title": "The Improbable Theory of Ana and Zak",
+    "author": "Brian Katcher",
+    "shelf": "YA",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780062272782-L.jpg"
+  }, {
+    "title": "First and Then",
+    "author": "Emma Mills",
+    "shelf": "YA",
+    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1426513843i/23310751.jpg"
+  },
+  {
+    "title": "Dreamology",
+    "author": "Lucy Keating",
+    "shelf": "YA",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780062380005-L.jpg"
+  },
+  {
+    "title": "Meant to Be",
+    "author": "Emily Giffin",
+    "shelf": "YA",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780425286661-L.jpg"
+  },
+  {
+    "title": "The Promise of Amazing",
+    "author": "Robin Constantine",
+    "shelf": "YA",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780062279484-L.jpg"
+  },
+  {
+    "title": "The 100",
+    "author": "Kass Morgan",
+    "shelf": "YA",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780316234498-L.jpg"
+  },
+  {
     "title": "The Lightning Thief",
     "author": "Rick Riordan",
     "shelf": "children",
@@ -544,13 +614,13 @@ export const books = [
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9781423146728-L.jpg"
   },
-{
+  {
     "title": "The Blood of Olympus",
     "author": "Rick Riordan",
     "shelf": "children",
     "cover": "https://upload.wikimedia.org/wikipedia/en/4/47/BloodOfOlympus.jpg"
   },
-{
+  {
     "title": "Harry Potter and the Sorcerer's Stone",
     "author": "J.K. Rowling",
     "shelf": "children",
@@ -586,13 +656,13 @@ export const books = [
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9780439784542-L.jpg"
   },
-{
+  {
     "title": "Harry Potter and the Deathly Hallows",
     "author": "J.K. Rowling",
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9780545139700-L.jpg"
   },
-{
+  {
     "title": "Matilda",
     "author": "Roald Dahl",
     "shelf": "children",
@@ -604,13 +674,13 @@ export const books = [
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9780142410110-L.jpg"
   },
-{
+  {
     "title": "The Hobbit",
     "author": "J.R.R. Tolkien",
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9780261103344-L.jpg"
   },
-{
+  {
     "title": "Holes",
     "author": "Louis Sachar",
     "shelf": "children",
@@ -622,48 +692,41 @@ export const books = [
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9780380731480-L.jpg"
   },
-{
+  {
     "title": "Frindle",
     "author": "Andrew Clements",
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9780689818769-L.jpg"
   },
-{
+  {
     "title": "Welcome to Dead House",
     "author": "R.L. Stine",
     "shelf": "children",
     "note": "Probably read around 10 in the series",
     "cover": "https://covers.openlibrary.org/b/isbn/9780545086042-L.jpg"
   },
-{
+  {
     "title": "Big Nate: In a Class by Himself",
     "author": "Lincoln Peirce",
     "shelf": "children",
     "note": "Probably read around 3 in the series",
     "cover": "https://covers.openlibrary.org/b/isbn/9780061944345-L.jpg"
   },
-{
+  {
     "title": "The Absent Author",
     "author": "Ron Roy",
     "shelf": "children",
     "note": "Probably read around 15 in the series",
     "cover": "https://covers.openlibrary.org/b/isbn/9780679881681-L.jpg"
   },
-{
+  {
     "title": "Dinosaurs Before Dark",
     "author": "Mary Pope Osborne",
     "note": "Probably read around 30 in the series",
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9780679824114-L.jpg"
   },
-{
-    "title": "Diary of a Wimpy Kid",
-    "author": "Jeff Kinney",
-    "shelf": "children",
-    "note": "Probably read around 6-8 in the series?",
-    "cover": "https://covers.openlibrary.org/b/isbn/9780810993136-L.jpg"
-  },
-{
+  {
     "title": "Powerless",
     "author": "Matthew Cody",
     "shelf": "children",
@@ -675,31 +738,31 @@ export const books = [
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9780440406945-L.jpg"
   },
-{
+  {
     "title": "Hatchet",
     "author": "Gary Paulsen",
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9781416936473-L.jpg"
   },
-{
+  {
     "title": "Brian's Winter",
     "author": "Gary Paulsen",
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9780385321983-L.jpg"
   },
-{
+  {
     "title": "Artemis Fowl",
     "author": "Eoin Colfer",
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9781368036986-L.jpg"
   },
-{
+  {
     "title": "Tentacles",
     "author": "Roland Smith",
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9780545166881-L.jpg"
   },
-{
+  {
     "title": "Dark Life",
     "author": "Kat Falls",
     "shelf": "children",
@@ -719,19 +782,97 @@ export const books = [
     "cover": "https://covers.openlibrary.org/b/isbn/9781423124542-L.jpg"
   },
   {
+    "title": "Stormbreaker",
+    "author": "Anthony Horowitz",
+    "shelf": "children",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780142406113-L.jpg"
+  },
+  {
+    "title": "Point Blanc",
+    "author": "Anthony Horowitz",
+    "shelf": "children",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780142406120-L.jpg"
+  },
+  {
+    "title": "The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "shelf": "children",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780618640157-L.jpg"
+  },
+  {
     "title": "The Unwanteds",
     "author": "Lisa McMann",
     "shelf": "children",
     "cover": "https://covers.openlibrary.org/b/isbn/9781442407688-L.jpg"
   },
 {
+  "title": "The Raft",
+  "author": "S.A. Bodeen",
+  "shelf": "children",
+  "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1329014074i/12987986.jpg"
+},
+  {
+    "title": "The Lost Scrolls: Earth",
+    "author": "Michael Teitelbaum",
+    "shelf": "children",
+    "cover": "https://cdn.kobo.com/book-images/1b86a634-a5a6-43f3-a4a6-bffa416e9616/1200/1200/False/the-lost-scrolls-earth-avatar-the-last-airbender.jpg"
+  },
+  {
     "title": "The Adventures of Captain Underpants",
     "author": "Dav Pilkey",
     "note": "Probably read around 4-5 in the series",
     "shelf": "children",
     "cover": "https://m.media-amazon.com/images/I/71rq5Gn8jfL._AC_UF1000,1000_QL80_.jpg"
   },
-{
+  {
+    "title": "Diary of a Wimpy Kid",
+    "author": "Jeff Kinney",
+    "shelf": "children",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780810993136-L.jpg"
+  },
+  {
+    "title": "Rodrick Rules",
+    "author": "Jeff Kinney",
+    "shelf": "children",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780810994737-L.jpg"
+  },
+  {
+    "title": "The Last Straw",
+    "author": "Jeff Kinney",
+    "shelf": "children",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780810970687-L.jpg"
+  },
+  {
+    "title": "Dog Days",
+    "author": "Jeff Kinney",
+    "shelf": "children",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780810983915-L.jpg"
+  },
+  {
+    "title": "The Ugly Truth",
+    "author": "Jeff Kinney",
+    "shelf": "children",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780810984912-L.jpg"
+  },
+  {
+    "title": "Cabin Fever",
+    "author": "Jeff Kinney",
+    "shelf": "children",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781419702235-L.jpg"
+  },
+  {
+    "title": "The Third Wheel",
+    "author": "Jeff Kinney",
+    "shelf": "children",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781419705847-L.jpg"
+  },
+  {
+    "title": "Hard Luck",
+    "author": "Jeff Kinney",
+    "shelf": "children",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781419711329-L.jpg"
+  },
+  {
     "title": "Amulet #1: The Stonekeeper",
     "author": "Kazu Kibuishi",
     "cover": "https://covers.openlibrary.org/b/isbn/9780439846813-L.jpg",
@@ -743,67 +884,67 @@ export const books = [
     "cover": "https://covers.openlibrary.org/b/isbn/9780439846837-L.jpg",
     "shelf": "children",
   },
-  // {
-  //   "title": "Amulet #3: The Cloud Searchers",
-  //   "author": "Kazu Kibuishi",
-  //   "cover": "https://covers.openlibrary.org/b/isbn/9780439846851-L.jpg",
-  //   "shelf": "children",
-  // },
-  // {
-  //   "title": "Amulet #4: The Last Council",
-  //   "author": "Kazu Kibuishi",
-  //   "cover": "https://covers.openlibrary.org/b/isbn/9780439846875-L.jpg",
-  //   "shelf": "children",
-  // },
-  // {
-  //   "title": "Amulet #5: Prince of the Elves",
-  //   "author": "Kazu Kibuishi",
-  //   "cover": "https://covers.openlibrary.org/b/isbn/9780439846899-L.jpg",
-  //   "shelf": "children",
-  // },
-  // {
-  //   "title": "Amulet #6: Escape From Lucien",
-  //   "author": "Kazu Kibuishi",
-  //   "cover": "https://covers.openlibrary.org/b/isbn/9780545433167-L.jpg",
-  //   "shelf": "children",
-  // },
-  // {
-  //   "title": "Amulet #7: Firelight",
-  //   "author": "Kazu Kibuishi",
-  //   "cover": "https://covers.openlibrary.org/b/isbn/9780545433174-L.jpg",
-  //   "shelf": "children",
-  // },
-  // {
-  //   "title": "Amulet #8: Supernova",
-  //   "author": "Kazu Kibuishi",
-  //   "cover": "https://covers.openlibrary.org/b/isbn/9780545433181-L.jpg",
-  //   "shelf": "children",
-  // },
-  // {
-  //   "title": "Amulet #9: Waverider",
-  //   "author": "Kazu Kibuishi",
-  //   "cover": "https://covers.openlibrary.org/b/isbn/9780545433198-L.jpg",
-  //   "shelf": "children",
-  // },
+  {
+    "title": "Amulet #3: The Cloud Searchers",
+    "author": "Kazu Kibuishi",
+    "shelf": "children",
+    "cover": "https://m.media-amazon.com/images/I/71Nc7KvkihL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "Amulet #4: The Last Council",
+    "author": "Kazu Kibuishi",
+    "shelf": "children",
+    "cover": "https://www.indigo.ca/cdn/shop/files/1_62edcf5e-aa3a-404d-ae34-943ffb72a80f.jpg?v=1772861332"
+  },
+  {
+    "title": "Amulet #5: Prince of the Elves",
+    "author": "Kazu Kibuishi",
+    "shelf": "children",
+    "cover": "https://www.indigo.ca/cdn/shop/files/1_cb471e81-21fe-4176-80bf-274c153a589a.jpg?v=1775574043"
+  },
+  {
+    "title": "Amulet #6: Escape From Lucien",
+    "author": "Kazu Kibuishi",
+    "shelf": "children",
+    "cover": "https://m.media-amazon.com/images/I/71fH-ksPA5L._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "Amulet #7: Firelight",
+    "author": "Kazu Kibuishi",
+    "shelf": "children",
+    "cover": "https://www.indigo.ca/cdn/shop/files/1_49bbe4cf-73ae-4f13-8671-7c6e914d0a44.jpg?v=1772860961"
+  },
+  {
+    "title": "Amulet #8: Supernova",
+    "author": "Kazu Kibuishi",
+    "shelf": "children",
+    "cover": "https://www.indigo.ca/cdn/shop/files/1_7b3a1d43-c9e9-4207-9c3a-d7cbe15cbd9d.jpg?v=1763714730"
+  },
+  {
+    "title": "Amulet #9: Waverider",
+    "author": "Kazu Kibuishi",
+    "shelf": "children",
+    "cover": "https://dynamic.indigoimages.ca/v1/books/books/0545828651/1.jpg?width=810&maxHeight=810&quality=85"
+  },
   {
     "title": "Cardboard",
     "author": "Doug TenNapel",
     "cover": "https://covers.openlibrary.org/b/isbn/9780545418720-L.jpg",
     "shelf": "children",
   },
-  // {
-  //   "title": "Knights of the Lunch Table: The Dodgeball Chronicles",
-  //   "author": "Frank Cammuso",
-  //   "cover": "https://covers.openlibrary.org/b/isbn/9780439928137-L.jpg",
-  //   "shelf": "children",
-  // },
-  // {
-  //   "title": "The Silver Six",
-  //   "author": "A.J. Lieberman",
-  //   "cover": "https://covers.openlibrary.org/b/isbn/9780545292436-L.jpg",
-  //   "shelf": "children",
-  // },
-{
+  {
+    "title": "Knights of the Lunch Table: The Dodgeball Chronicles",
+    "author": "Frank Cammuso",
+    "cover": "https://images.archambault.ca/images/PG/1959/1959506-gf.jpg?404=default",
+    "shelf": "children",
+  },
+  {
+    "title": "The Silver Six",
+    "author": "A.J. Lieberman",
+    "cover": "https://m.media-amazon.com/images/I/81ZjvRU56vL._AC_UF1000,1000_QL80_.jpg",
+    "shelf": "children",
+  },
+  {
     "title": "Twelfth Night",
     "author": "William Shakespeare",
     "shelf": "classic",
@@ -844,13 +985,24 @@ export const books = [
     "author": "Harper Lee",
     "shelf": "classic",
     "cover": "https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg"
-  }
-
+  },
+  {
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "shelf": "classic",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780060850524-L.jpg"
+  },
+  {
+    "title": "A Prayer for Owen Meany",
+    "author": "John Irving",
+    "shelf": "classic",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780345361790-L.jpg"
+  },
 
 ];
 
 
 // Missing novels:
-// Grey novel protagonist named wren
-// TFIOS like book, boy is amputee????
 // Hockey protagonist gives up A to play with captain
+// ALpha City
+// Odyseey dog
