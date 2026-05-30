@@ -259,7 +259,11 @@ h3 {
 }
 
 .photography-header {
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
+}
+
+.photography-subtitle {
+  margin-bottom: 0.8rem;
 }
 
 /* ========================
@@ -307,6 +311,124 @@ h3 {
 .yarl__icon {
   color: #222 !important;
   filter: none !important;
+}
+
+
+/* ─────────────────────────────
+   SLIDE LAYOUT (vertical stack)
+   ───────────────────────────── */
+.yarl__slide {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  /* spacing so nothing touches edges */
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────
+   IMAGE (take all available space, keep ratio)
+   ───────────────────────────── */
+.yarl__slide_image {
+  display: block;
+
+  /* THIS is what allows flexible growth */
+  flex: 1 1 auto;
+  min-height: 0;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+
+  align-self: center;
+}
+
+/* ─────────────────────────────
+   CAPTION CONTAINER (always below image)
+   ───────────────────────────── */
+.yarl__slide_captions_container {
+  flex: 0 0 auto;
+
+  width: 100%;
+
+  margin-top: 20px;
+  // margin-bottom: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: static !important;
+  background: transparent !important;
+}
+
+/* ─────────────────────────────
+   TITLE
+   ───────────────────────────── */
+.yarl__slide_title {
+  position: static !important;
+  transform: none !important;
+
+  display: block;
+
+  color: black;
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  text-align: center;
+
+  padding: 0 16px;
+  margin: 0 0 4px;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────
+   DESCRIPTION
+   ───────────────────────────── */
+.yarl__slide_description {
+  position: static !important;
+  transform: none !important;
+
+  display: block;
+
+  color: black;
+  font-size: 0.85rem;
+
+  text-align: center;
+
+  // padding: 0 16px;
+  margin: 0;
+
+  width: 100%;
+  box-sizing: border-box;
+  font-style: italic;
+}
+.yarl__slide_captions_container {
+  padding: 0;
+}
+
+/* ─────────────────────────────
+   HIDE EMPTY CAPTIONS
+   ───────────────────────────── */
+.yarl__slide_title:empty,
+.yarl__slide_description:empty {
+  display: none !important;
+}
+
+/* ─────────────────────────────
+   COLLAPSE EMPTY CAPTION AREA
+   ───────────────────────────── */
+.yarl__slide_captions_container:has(.yarl__slide_title:empty):has(.yarl__slide_description:empty) {
+  display: none;
 }
 
 /* ========================

@@ -8,6 +8,7 @@ export default function Photography() {
         <header className="photography-header">
           <h1>Photography</h1>
         </header>
+        <div className="photography-subtitle">Extraordinary in the ordinary</div>
 
         <ImageGrid photos={photos.slice().reverse()} />
       </div>

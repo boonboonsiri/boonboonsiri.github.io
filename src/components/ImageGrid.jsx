@@ -1,6 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
+import Captions from 'yet-another-react-lightbox/plugins/captions';
+
 import 'yet-another-react-lightbox/styles.css';
+import 'yet-another-react-lightbox/plugins/captions.css';
 
 const INITIAL_COUNT = 9;
 const LOAD_MORE_COUNT = 6;
@@ -28,7 +31,10 @@ export default function ImageGrid({ photos = [] }) {
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
   }, [visibleCount, photos.length]);
 
   const columns = useMemo(() => {
@@ -55,13 +61,11 @@ export default function ImageGrid({ photos = [] }) {
                 type="button"
                 className="image-grid-item"
                 onClick={() => setIndex(photo.originalIndex)}
-                aria-label={
-                  photo.alt || `Open photo ${photo.originalIndex + 1}`
-                }
+                aria-label={`Open photo ${photo.originalIndex + 1}`}
               >
                 <img
                   src={photo.src}
-                  alt={photo.alt || ''}
+                  alt={photo.description || ''}
                   loading="lazy"
                   decoding="async"
                 />
@@ -76,6 +80,12 @@ export default function ImageGrid({ photos = [] }) {
         close={() => setIndex(-1)}
         index={index}
         slides={visiblePhotos}
+        plugins={[Captions]}
+        captions={{
+          descriptionTextAlign: 'center',
+    showToggle: false,
+
+        }}
         carousel={{ padding: 24 }}
         styles={{
           container: { backgroundColor: '#ffffff' },
