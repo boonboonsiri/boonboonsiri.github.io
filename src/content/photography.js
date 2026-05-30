@@ -37,12 +37,12 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/geb7rrrw6l5nwutk0r5zi/image-27.png?rlkey=dn15ixjzty42dml597wrid4rt',
     alt: 'image-27',
-    description: "after the blaze / sunset park sp'23"
+    description: "til dawn / sunset park sp'23"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/5skll943kh0gce28v4l5q/image-22.png?rlkey=1180e1v976tzge809lbam6sm6',
     alt: 'image-22',
-    description: "spring day / roosevelt island sp'23"
+    description: "heartbeat ii / roosevelt island sp'23"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/6jnkwqebrve8tf3fvus7q/image-11.png?rlkey=w581748yc6hidkb951h9g94ae',
@@ -77,7 +77,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/t6dl99cr9rmybv3p7th9v/10790.jpg?rlkey=bjaz30t73ykwynw9fphnxm3tl',
     alt: 'DSC04942',
-    description: "of speckles and embers in the wanning days of summer / central park su'25"
+    description: "of speckles and embers in the waning days of summer / central park su'25"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/ebn79fhapcjir7h6bjp7s/DSC03915.JPG?rlkey=84rgis2rky1pn8jg957ak3sop',
@@ -92,12 +92,12 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/n4dvgn7bmsjj6w08od0xm/DSC05394.JPG?rlkey=38fqu5h0pqtolr3nmn22mbrqh',
     alt: 'DSC05394',
-    description: "cherish what i waited for / hunters point sp'25"
+    description: "a lovely night / hunters point sp'25"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/1zthg8sr8b782fftfz85y/DSC05967.JPG?rlkey=7ym708pcdlaa4oet3seaceyga',
     alt: 'DSC05967',
-    description: "i'll always find you / san francisco f'25"
+    description: "to the future, to better days / san francisco f'25"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/9b4zzqlbmagr6m4l2l947/DSC04463.JPG?rlkey=94dalt1r1lj4g9mnral9h0dyx',
@@ -106,7 +106,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/j3q2mr1w3no0xa0vqw19c/DSC04620.JPG?rlkey=hilvn8b7wpzi0a3b480jmqjhx',
     alt: 'DSC04620',
-    description: "ocean waves, as long as we're together / mt tamalpais su'25"
+    description: "ocean waves / mt tamalpais su'25"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/z39eglbcautrfa07dtliw/image-33.png?rlkey=cwdccyb7gwp660en3qxrnz5c5',
@@ -153,7 +153,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/c3m6kr302h94g18yy5d32/DSC06903.JPG?rlkey=xgndge64v3uq0nja6yg3onnto',
     alt: 'DSC06903',
-    description: "lachesism adjacent, sanctuary in the unease / oulanka w'25"
+    description: "lachesism adjacent, sanctuary in the solitude / oulanka w'25"
   },
 
   {
@@ -177,7 +177,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/zv78g8oi39pmdn38f4qhg/image-28.png?rlkey=qtypu608em4clkwzjuu5eaw4e',
     alt: 'image-28',
-    description: "before the warmth / coney island sp'23"
+    description: "before summer / coney island sp'23"
   },
 
   {
@@ -192,7 +192,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/bi3nlosghx8yrko0n4k22/DSC03474.JPG?rlkey=vkfonqjzd863vx2bcwtelbnc0',
     alt: 'DSC03474',
-    description: "pulse of the city / hunters point sp'25"
+    description: "heartbeat / hunters point sp'25"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/1m4qgjj4h707b5r4pi3u2/11637.jpg?rlkey=di78pg4e8mmoyrcrqbcqo9xzz',
