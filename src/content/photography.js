@@ -125,7 +125,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/u0c09x9q1cughyke1uk63/DSC04011.JPG?rlkey=rd1jichoujqa33xpfeddpfckv',
     alt: 'DSC04011',
-    description: "catching the last rays of light / san francisco su'25"
+    description: "to ocean's end / san francisco su'25"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/ea218vj8lyesfxqirjful/DSC04544.JPG?rlkey=lsqv8awee152xhz2h5yub04ks',

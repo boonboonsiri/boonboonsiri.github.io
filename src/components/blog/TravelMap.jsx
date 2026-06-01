@@ -93,6 +93,24 @@ const places = [
   { name: 'Boston', coordinates: [-71.0589, 42.3601], years: [2023] },
   { name: 'Philadelphia', coordinates: [-75.1652, 39.9526], years: [2025] },
   { name: 'Squamish', coordinates: [-123.1558, 49.7016], years: [2022] },
+
+{ name: 'Mammoth Cave', coordinates: [-86.1008, 37.1869], years: [2013] },
+
+{ name: 'Skagway', coordinates: [-135.3217, 59.4583], years: [2017] },
+
+{ name: 'Versailles', coordinates: [2.1204, 48.8049], years: [2018] },
+
+{ name: 'Blue Mountain', coordinates: [-80.3169, 44.5038], years: [2023] },
+
+{ name: 'Seoul', coordinates: [126.9780, 37.5665], years: [2026] },
+
+{ name: 'Nara', coordinates: [135.8048, 34.6851], years: [2026] },
+
+{ name: 'Osaka', coordinates: [135.5023, 34.6937], years: [2026] },
+
+{ name: 'Fujiyoshida', coordinates: [138.8074, 35.4875], years: [2026] },
+
+{ name: 'Kyoto', coordinates: [135.7681, 35.0116], years: [2026] },
 ];
 
 const placesGeoJSON = {
