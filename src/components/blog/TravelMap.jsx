@@ -21,6 +21,8 @@ const places = [
   { name: 'Point Reyes', coordinates: [-122.9394, 38.069], years: [2025] },
   { name: 'Big Sur', coordinates: [-121.8081, 36.2704], years: [2025] },
   { name: 'Yosemite', coordinates: [-119.5383, 37.8651], years: [2025] },
+  { name: 'Mount Tamalpais', coordinates: [-122.596, 37.923], years: [2026] },
+  { name: 'Monterey Bay', coordinates: [-121.894, 36.806], years: [2026] },
 
   { name: 'Grand Canyon', coordinates: [-112.1401, 36.0544], years: [2025] },
   { name: 'Las Vegas', coordinates: [-115.1398, 36.1699], years: [2016, 2018, 2025] },
@@ -111,6 +113,7 @@ const places = [
 { name: 'Fujiyoshida', coordinates: [138.8074, 35.4875], years: [2026] },
 
 { name: 'Kyoto', coordinates: [135.7681, 35.0116], years: [2026] },
+{ name: 'Kobe', coordinates: [135.1955, 34.6901], years: [2026] },
 ];
 
 const placesGeoJSON = {

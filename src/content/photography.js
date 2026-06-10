@@ -1,5 +1,14 @@
 export const photos = [
   {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/m7vpceus69wuiujqges2s/DSC01957.JPG?rlkey=83l5nsbar5k1ajbvszaabgnwv',
+    alt: 'DSC01957',
+    description: "to our next / osaka sp'26"
+  },
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/4k8kgkgfl9oy911rbtiju/DSC01956.JPG?rlkey=y7f90jv8mikfdvniyttr8pl0d',
+    alt: 'DSC01956',
+  },
+  {
     src: 'https://dl.dropboxusercontent.com/scl/fi/k6h9k9fkqh4xgir3vzl16/image.png?rlkey=qsec99t8isgkqrjt86fx15or8',
     alt: 'image',
   },
@@ -8,9 +17,17 @@ export const photos = [
     alt: 'image-51',
   },
   {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/p68c01ld93cnvxpy9so58/DSC01716.JPG?rlkey=lv5rlxivlosu125ukfx4rs2u2',
+    alt: 'DSC01716',
+  },
+  {
     src: 'https://dl.dropboxusercontent.com/scl/fi/l2tzpgipcjckunnn9mswz/image-49.png?rlkey=aa14ma6tim7q0k2gg86pk03fj',
     alt: 'image-49',
     description: "prize! / east village f'23"
+  },
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/h9pldwrdaelbrjrp655g8/DSC08560.JPG?rlkey=ee2i2sg3jfdk1jxnv97ik6j0b',
+    alt: 'DSC08560',
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/4o7l32dhhnle61ynlhe3i/image-45.png?rlkey=vixulol1dzn2xiogz1rl8ctbs',
@@ -53,6 +70,11 @@ export const photos = [
     alt: 'DSC03741',
   },
   {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/l3ebcy02j3sre187ezzn7/DSC08987.JPG?rlkey=awko5inu0xpyz7prqo8wih7dx',
+    alt: 'DSC08987',
+    description: "bloom / tokyo disney sp'26"
+  },
+  {
     src: 'https://dl.dropboxusercontent.com/scl/fi/3e4v7vnvce76yl3brin5v/image-5.png?rlkey=w418qgk5j56924kzexk3tknf9',
     alt: 'image-5',
     description: "meeting you / wynwood su'22"
@@ -65,6 +87,12 @@ export const photos = [
     src: 'https://dl.dropboxusercontent.com/scl/fi/4z3n91a8fhcdb9h29ed5g/DSC03321.JPG?rlkey=sk8zcdkvd0c9ao0312gm0zjar',
     alt: 'DSC03321',
   },
+
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/anzuvgpjwvoe70er4w7tv/DSC00621.JPG?rlkey=igpkf8v3gvak8a4emwpz2pk77',
+    alt: 'DSC00621',
+    description: "make a wish / osaka sp'26"
+  },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/bx7jrrqhkwbg21izbrw48/image-2.png?rlkey=fvg1kyk36vjwo9sxdfzyuoll7',
     alt: 'image-2',
@@ -74,14 +102,25 @@ export const photos = [
     src: 'https://dl.dropboxusercontent.com/scl/fi/8waehjz6p1y3qnbnmgu0o/DSC03828.JPG?rlkey=f36hua45ckm43czcqic0ijpoc',
     alt: 'DSC03828',
   },
+
   {
-    src: 'https://dl.dropboxusercontent.com/scl/fi/t6dl99cr9rmybv3p7th9v/10790.jpg?rlkey=bjaz30t73ykwynw9fphnxm3tl',
-    alt: 'DSC04942',
-    description: "of speckles and embers in the waning days of summer / central park su'25"
+    src: 'https://dl.dropboxusercontent.com/scl/fi/v3h07e7nq4osleorehb5q/DSC01895.JPG?rlkey=7bqwo7lc0ugphrwlozueof6an',
+    alt: 'DSC01895',
+    description: "to each their own/ osaka sp'26"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/ebn79fhapcjir7h6bjp7s/DSC03915.JPG?rlkey=84rgis2rky1pn8jg957ak3sop',
     alt: 'DSC03915',
+  },
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/v075el5mxufrnibn4drjy/DSC00661.JPG?rlkey=iwg9mm3r8rjgikm3ukxwv76o5',
+    alt: 'DSC00661',
+    description: "in the afterglow / high park sp'24"
+  },
+
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/fazptm70ujizjm69k553p/DSC09998.JPG?rlkey=lr5mxb43t56jdifto2ned66o9',
+    alt: 'DSC09998',
   },
 
   {
@@ -94,14 +133,34 @@ export const photos = [
     alt: 'DSC05394',
     description: "a lovely night / hunters point sp'25"
   },
+
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/1zthg8sr8b782fftfz85y/DSC05967.JPG?rlkey=7ym708pcdlaa4oet3seaceyga',
     alt: 'DSC05967',
     description: "to the future, to better days / san francisco f'25"
   },
   {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/an6n2y3c6yegafw7yx7g5/DSC08276.JPG?rlkey=vzprssp6193jbhvrgzfr05mkt',
+    alt: 'DSC08276',
+    description: "heartbeat iii / seoul sp'26"
+  },
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/ur7lq8pt8q73w0jymt182/DSC09622.JPG?rlkey=1zvt0u05suk1jx08ng12w9a50',
+    alt: 'DSC09622',
+  },
+
+  {
     src: 'https://dl.dropboxusercontent.com/scl/fi/9b4zzqlbmagr6m4l2l947/DSC04463.JPG?rlkey=94dalt1r1lj4g9mnral9h0dyx',
     alt: 'DSC04463',
+  },
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/tb27ssm6vapwmrfpjydyr/DSC00373.JPG?rlkey=mktlh3z1g63omn6bfqtzzgvbw',
+    alt: 'DSC00373',
+    description: "a perfect moment in a window / nara sp'26"
+  },
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/rl3hvcglaiolm0296ggep/DSC00745.JPG?rlkey=2xtknyiipgg5yp8aw90tway67',
+    alt: 'DSC00745',
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/j3q2mr1w3no0xa0vqw19c/DSC04620.JPG?rlkey=hilvn8b7wpzi0a3b480jmqjhx',
@@ -113,6 +172,18 @@ export const photos = [
     alt: 'image-33',
   },
   {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/115ztk49ef336t6l2h0x8/DSCF3730.JPG?rlkey=fmjju8di1bydz8luints1e2lf',
+    alt: 'DSCF3730',
+  },
+
+
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/g9n1e3f5scr2s6vpnwfny/DSC07661.JPG?rlkey=qpyvhbuo9xnhastrhh0s78x7j',
+    alt: 'DSC07661',
+  },
+
+
+  {
     src: 'https://dl.dropboxusercontent.com/scl/fi/wta0mse3snljnfpk58e3u/DSC03945.JPG?rlkey=8xy00nbwfvclpyoab93hpkww9',
     alt: 'DSC03945',
     description: "something new / san francisco su'25"
@@ -121,6 +192,11 @@ export const photos = [
     src: 'https://dl.dropboxusercontent.com/scl/fi/hloekbs8alkl2ibu82kev/DSC04852new.jpg?rlkey=lkksj6wgddcmtnf3zdfn63srk',
     alt: 'DSC04852new',
     description: "just us even in the crowd / brooklyn bridge su'25"
+  },
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/xvncad7vtefnev4hbh2ap/DSC07988.JPG?rlkey=o1tbmn3s6ry2bp4rcgb6may24',
+    alt: 'DSC07988',
+    description: "princess / seoul sp'26"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/u0c09x9q1cughyke1uk63/DSC04011.JPG?rlkey=rd1jichoujqa33xpfeddpfckv',
@@ -133,38 +209,69 @@ export const photos = [
     description: "our hidden spot / yosemite su'25"
   },
   {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/0tlklb4mmaw5l0gts0zc3/DSC09829.JPG?rlkey=mod70ruma4frdqzn7gbl3smmc',
+    alt: 'DSC09829',
+  },
+  {
     src: 'https://dl.dropboxusercontent.com/scl/fi/iidi0lxn6ndm69ig9epzq/DSC04439.JPG?rlkey=x822w3opdqwcgdkk7o7rern5c',
     alt: 'DSC04439',
     description: "with the city / hunters point sp'25"
+  },
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/7pzu7kkcv2eak9pof7tnm/DSC_2158.JPG?rlkey=dzm669vc0ukivzs2y3wd21w8h',
+    alt: 'DSC_2158',
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/1pydtqqltw70qqnszrlxh/DSC04403.JPG?rlkey=7vcc9i237wkdvm5gv7z33pohm',
     alt: 'DSC04403',
   },
   {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/hpcwj7weu8luoe6lxptok/DSC09878.JPG?rlkey=0f42rinohh374237hyyxqtm4s',
+    alt: 'DSC09878',
+    description: "one summer's day / kyoto sp'26"
+  },
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/x0kcetiztodcohegucm02/DSC08771.JPG?rlkey=3zbvc87ky88mp54mit9qzjzbv',
+    alt: 'DSC08771',
+    description: "date / tokyo sp'26"
+  },
+  {
     src: 'https://dl.dropboxusercontent.com/scl/fi/by82id691zeg8k41y887g/DSC03327.JPG?rlkey=szcuadn49owr25im1elh0kvga',
     alt: 'DSC03327',
   },
+
   {
-    src: 'https://dl.dropboxusercontent.com/scl/fi/v075el5mxufrnibn4drjy/DSC00661.JPG?rlkey=iwg9mm3r8rjgikm3ukxwv76o5',
-    alt: 'DSC00661',
-    description: "in the afterglow / high park sp'24"
+    src: 'https://dl.dropboxusercontent.com/scl/fi/hh111e14gyc1rddu3a3at/DSC09962.JPG?rlkey=zpayrvay742vxof1hwr829x8g',
+    alt: 'DSC09962',
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/c3m6kr302h94g18yy5d32/DSC06903.JPG?rlkey=xgndge64v3uq0nja6yg3onnto',
     alt: 'DSC06903',
     description: "lachesism adjacent, sanctuary in the solitude / oulanka w'25"
   },
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/t6dl99cr9rmybv3p7th9v/10790.jpg?rlkey=bjaz30t73ykwynw9fphnxm3tl',
+    alt: 'DSC04942',
+    description: "of speckles and embers in the waning days of summer / central park su'25"
+  },
 
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/ib46uhjs2qugvxjj9ilre/DSC03756.JPG?rlkey=y0l8tukmy7nbbhlgkscxixt1m',
     alt: 'DSC03756',
   },
+
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/7uk6bz5h00ajj3carqzia/DSC05589newc.jpg?rlkey=txk9t92ign11kz6z2iacc5vrr',
     alt: 'DSC05589newb',
     description: "beautiful / chelsea su'25"
   },
+  {
+    src: 'https://dl.dropboxusercontent.com/scl/fi/bzlrt8p01scbwvc95jkdn/IMG_0933.jpg?rlkey=3z07r4l8ef3urx46pnoy0tciy',
+    alt: 'IMG_0933',
+    description: "to be in the moment / fujiyoshida sp'26"
+  },
+
+
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/w98hqrupnjfojdg8c1h2z/image-17.png?rlkey=zfymc82lqngwj7fd86trvzatn',
     alt: 'image-17',
@@ -177,7 +284,6 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/zv78g8oi39pmdn38f4qhg/image-28.png?rlkey=qtypu608em4clkwzjuu5eaw4e',
     alt: 'image-28',
-    description: "before summer / coney island sp'23"
   },
 
   {
