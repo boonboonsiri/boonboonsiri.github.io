@@ -33,6 +33,12 @@ export const books = [
     cover: "https://m.media-amazon.com/images/I/81WY6M9XikL.jpg",
   },
   {
+    title: "Babel",
+    author: "R.F Kuang",
+    shelf: "current",
+    cover: "https://preview.redd.it/bingo-review-babel-by-rf-kuang-is-a-bad-book-v0-1zhznuu7peue1.jpg?width=656&format=pjpg&auto=webp&s=c65822425058f1626ec6e7506717833c93e149b4",
+  },
+  {
     title: "Talking at Night",
     author: "Claire Daverley",
     shelf: "current",
