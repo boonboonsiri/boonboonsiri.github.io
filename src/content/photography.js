@@ -113,7 +113,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/v3h07e7nq4osleorehb5q/DSC01895.JPG?rlkey=7bqwo7lc0ugphrwlozueof6an',
     alt: 'DSC01895',
-    description: "trying to appreciate everyday / osaka sp'26"
+    description: "trying to appreciate everyday, every moment / osaka sp'26"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/ebn79fhapcjir7h6bjp7s/DSC03915.JPG?rlkey=84rgis2rky1pn8jg957ak3sop',
@@ -136,7 +136,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/jscj6es13ekd2nqkq64yu/DSC06537.JPG?rlkey=b0vkt1x0mib2enjke2na70ult',
     alt: 'DSC06537',
-    description: "trying to meet a new friend / rovaniemi w'25"
+    description: "a new friend / rovaniemi w'25"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/n4dvgn7bmsjj6w08od0xm/DSC05394.JPG?rlkey=38fqu5h0pqtolr3nmn22mbrqh',
@@ -152,7 +152,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/an6n2y3c6yegafw7yx7g5/DSC08276.JPG?rlkey=vzprssp6193jbhvrgzfr05mkt',
     alt: 'DSC08276',
-    description: "heartbeat iii / seoul sp'26"
+    description: "heartbeat iii, ivs(var) / seoul sp'26"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/ur7lq8pt8q73w0jymt182/DSC09622.JPG?rlkey=1zvt0u05suk1jx08ng12w9a50',
@@ -249,7 +249,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/x0kcetiztodcohegucm02/DSC08771.JPG?rlkey=3zbvc87ky88mp54mit9qzjzbv',
     alt: 'DSC08771',
-    description: "date / tokyo sp'26"
+    description: "date, mitsuha no theme/ tokyo sp'26"
   },
 
 
@@ -260,7 +260,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/c3m6kr302h94g18yy5d32/DSC06903.JPG?rlkey=xgndge64v3uq0nja6yg3onnto',
     alt: 'DSC06903',
-    description: "lachesism adjacent, sanctuary in the solitude / oulanka w'25"
+    description: "lachesism adjacent / oulanka w'25"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/t6dl99cr9rmybv3p7th9v/10790.jpg?rlkey=bjaz30t73ykwynw9fphnxm3tl',
@@ -281,7 +281,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/bzlrt8p01scbwvc95jkdn/IMG_0933.jpg?rlkey=3z07r4l8ef3urx46pnoy0tciy',
     alt: 'IMG_0933',
-    description: "the grandiose of it all, yet still at home / fujiyoshida sp'26"
+    description: "home in the grandiose of it all / fujiyoshida sp'26"
   },
 
 
