@@ -20,6 +20,7 @@ import { books } from "../../content/books";
 
 import Book from "./Book";
 import Movie from "./Movie";
+import Music from "./Music";
 
 import "../../styles/Library.scss";
 
@@ -33,11 +34,14 @@ const SANS_FONT =
 const SERIF_FONT =
   '"source-serif-pro", serif';
 
+/* ============================================
+   BOOK SETTINGS
+   ============================================ */
+
 const BOOK_WIDTH = 170;
 const BOOK_HEIGHT = 255;
 const BOOK_GAP = 26;
 const BOOKS_PER_ROW = 6;
-
 const ROW_HEIGHT = 330;
 
 const SECTION_PADDING_X = 30;
@@ -55,24 +59,57 @@ const INTRO_HEIGHT = 180;
 const SECTION_GAP = 10;
 
 /* ============================================
- * MOVIE SETTINGS
- * ============================================ */
+   MOVIE SETTINGS
+   ============================================ */
 
 const MOVIE_WIDTH = 150;
 const MOVIE_GAP = 22;
 const MOVIES_PER_ROW = 5;
 const MOVIE_ROW_HEIGHT = 315;
 
+/*
+ * This is the horizontal distance between
+ * the bookshelf and the movie section.
+ */
+
 const MOVIE_OFFSET_X = 300;
 
 /*
- * Position of the first row of movies relative
- * to the movie section's title.
+ * First movie row relative to the top
+ * of the movie section.
  */
+
 const MOVIE_CONTENT_Y = 145;
 
 const LETTERBOXD_URL =
   "https://letterboxd.com/boonboonsiri/films/by/entry-rating/";
+
+/* ============================================
+   MUSIC SETTINGS
+   ============================================ */
+
+/*
+ * Music sits to the LEFT of the bookshelf.
+ *
+ * Change this if you want more/less space
+ * between Music and Books.
+ */
+
+const MUSIC_OFFSET_X = 1180;
+
+/*
+ * Music cards are controlled by Music.jsx.
+ * This only determines where the section begins.
+ */
+
+const MUSIC_SECTION_Y = 0;
+
+const SPOTIFY_PLAYLIST_URL =
+  "https://open.spotify.com/playlist/2s6WmvXNs5rrZmAZ1HDInf";
+
+/* ============================================
+   LIBRARY
+   ============================================ */
 
 export default function Library() {
   const stageRef = useRef(null);
@@ -85,14 +122,14 @@ export default function Library() {
   const [camera, setCamera] = useState({
     x: 0,
     y: 100,
-    zoom: 0.5,
+    zoom: 0.6,
   });
 
   const [films, setFilms] = useState([]);
 
-  /* ============================================
-   * GROUP BOOKS BY SHELF
-   * ============================================ */
+  /* ==========================================
+     GROUP BOOKS BY SHELF
+     ========================================== */
 
   const sections = useMemo(() => {
     const order = [];
@@ -113,9 +150,9 @@ export default function Library() {
     }));
   }, []);
 
-  /* ============================================
-   * BUILD BOOK SECTION POSITIONS
-   * ============================================ */
+  /* ==========================================
+     BUILD BOOK SECTION POSITIONS
+     ========================================== */
 
   const sectionItems = useMemo(() => {
     let currentY = INTRO_HEIGHT;
@@ -149,15 +186,16 @@ export default function Library() {
         height,
       };
 
-      currentY += height + SECTION_GAP;
+      currentY +=
+        height + SECTION_GAP;
 
       return result;
     });
   }, [sections]);
 
-  /* ============================================
-   * FETCH LETTERBOXD MOVIES
-   * ============================================ */
+  /* ==========================================
+     FETCH LETTERBOXD MOVIES
+     ========================================== */
 
   useEffect(() => {
     async function fetchFilms() {
@@ -169,7 +207,8 @@ export default function Library() {
           "https://api.rss2json.com/v1/api.json?rss_url=" +
           encodeURIComponent(rssUrl);
 
-        const res = await fetch(apiUrl);
+        const res =
+          await fetch(apiUrl);
 
         if (!res.ok) {
           throw new Error(
@@ -177,78 +216,93 @@ export default function Library() {
           );
         }
 
-        const data = await res.json();
+        const data =
+          await res.json();
 
-        const items = (data.items || [])
-          .slice(0, 15)
-          .map((item) => {
-            const rawTitle =
-              item.title || "";
+        const items =
+          (data.items || [])
+            .slice(0, 15)
+            .map((item) => {
+              const rawTitle =
+                item.title || "";
 
-            const ratingMatches =
-              rawTitle.match(
-                /★★★★★|★★★★½|★★★★|★★★½|★★★|★★½|★★|★½|★/g
-              ) || [];
+              /* Find rating */
 
-            const rating =
-              ratingMatches.length
-                ? ratingMatches.sort(
-                    (a, b) =>
-                      b.length - a.length
-                  )[0]
-                : "";
+              const ratingMatches =
+                rawTitle.match(
+                  /★★★★★|★★★★½|★★★★|★★★½|★★★|★★½|★★|★½|★/g
+                ) || [];
 
-            const yearMatch =
-              rawTitle.match(
-                /\b(19|20)\d{2}\b/
-              );
+              const rating =
+                ratingMatches.length
+                  ? ratingMatches.sort(
+                      (a, b) =>
+                        b.length -
+                        a.length
+                    )[0]
+                  : "";
 
-            const year = yearMatch
-              ? yearMatch[0]
-              : "";
+              /* Find year */
 
-            const title = rawTitle
-              .replace(
-                /★★★★★|★★★★½|★★★★|★★★½|★★★|★★½|★★|★½|★/g,
-                ""
-              )
-              .replace(
-                /\b(19|20)\d{2}\b/g,
-                ""
-              )
-              .replace(
-                /\s*-\s*/g,
-                " "
-              )
-              .replace(
-                /,/g,
-                " "
-              )
-              .replace(
-                /\s+/g,
-                " "
-              )
-              .trim();
+              const yearMatch =
+                rawTitle.match(
+                  /\b(19|20)\d{2}\b/
+                );
 
-            const imageMatch =
-              (
-                item.description ||
-                ""
-              ).match(
-                /<img[^>]+src="([^"]+)"/i
-              );
+              const year =
+                yearMatch
+                  ? yearMatch[0]
+                  : "";
 
-            return {
-              title,
-              year,
-              rating,
-              link: item.link,
-              watchedDate: item.pubDate,
-              poster: imageMatch
-                ? imageMatch[1]
-                : "",
-            };
-          });
+              /* Clean title */
+
+              const title =
+                rawTitle
+                  .replace(
+                    /★★★★★|★★★★½|★★★★|★★★½|★★★|★★½|★★|★½|★/g,
+                    ""
+                  )
+                  .replace(
+                    /\b(19|20)\d{2}\b/g,
+                    ""
+                  )
+                  .replace(
+                    /\s-\s/g,
+                    " "
+                  )
+                  .replace(
+                    /,/g,
+                    " "
+                  )
+                  .replace(
+                    /\s+/g,
+                    " "
+                  )
+                  .trim();
+
+              /* Extract poster */
+
+              const imageMatch =
+                (
+                  item.description ||
+                  ""
+                ).match(
+                  /<img[^>]+src="([^"]+)"/i
+                );
+
+              return {
+                title,
+                year,
+                rating,
+                link: item.link,
+                watchedDate:
+                  item.pubDate,
+                poster:
+                  imageMatch
+                    ? imageMatch[1]
+                    : "",
+              };
+            });
 
         setFilms(items);
       } catch (error) {
@@ -262,9 +316,9 @@ export default function Library() {
     fetchFilms();
   }, []);
 
-  /* ============================================
-   * RESIZE
-   * ============================================ */
+  /* ==========================================
+     RESIZE
+     ========================================== */
 
   useEffect(() => {
     const resize = () => {
@@ -300,9 +354,9 @@ export default function Library() {
     };
   }, []);
 
-  /* ============================================
-   * ZOOM
-   * ============================================ */
+  /* ==========================================
+     ZOOM
+     ========================================== */
 
   const handleWheel = (e) => {
     e.evt.preventDefault();
@@ -354,9 +408,9 @@ export default function Library() {
     });
   };
 
-  /* ============================================
-   * PAN
-   * ============================================ */
+  /* ==========================================
+     PAN
+     ========================================== */
 
   const handleDragEnd = (e) => {
     setCamera((current) => ({
@@ -366,9 +420,13 @@ export default function Library() {
     }));
   };
 
-  /* ============================================
-   * MOVIE POSITION
-   * ============================================ */
+  /* ==========================================
+     POSITIONS
+     ========================================== */
+
+  /*
+   * Books are centered around x = 0.
+   */
 
   const movieStartX =
     SECTION_WIDTH / 2 +
@@ -381,10 +439,16 @@ export default function Library() {
       MOVIE_GAP;
 
   /*
-   * Both Library and Movies use y = 0.
-   * Their headings therefore align exactly.
+   * Music is to the LEFT of Books.
+   *
+   * The right edge of the music area is
+   * MUSIC_OFFSET_X away from the left
+   * edge of the bookshelf.
    */
-  const movieSectionY = 0;
+
+  const musicStartX =
+    -SECTION_WIDTH / 2 -
+    MUSIC_OFFSET_X;
 
   return (
     <div className="library">
@@ -446,6 +510,7 @@ export default function Library() {
                 x={section.x}
                 y={section.y}
               >
+
                 {/* Wooden backboard */}
 
                 <Rect
@@ -600,7 +665,7 @@ export default function Library() {
 
           <Group
             x={movieStartX}
-            y={movieSectionY}
+            y={0}
           >
             {/* Movies title */}
 
@@ -708,6 +773,91 @@ export default function Library() {
                 );
               }
             )}
+          </Group>
+
+          {/* ==================================
+              MUSIC
+              ================================== */}
+
+          <Group
+            x={musicStartX}
+            y={MUSIC_SECTION_Y}
+          >
+            {/* Music title */}
+
+            <Text
+              x={0}
+              y={28}
+              width={500}
+              text="Music"
+              fontFamily={SERIF_FONT}
+              fontSize={46}
+              fontStyle="bold"
+              fill="#202124"
+              align="left"
+            />
+
+            {/* Music description + Spotify link */}
+
+            <Group
+              x={0}
+              y={92}
+            >
+              <Text
+                x={0}
+                y={0}
+                text="Music that I'm currently listening to from "
+                fontFamily={SANS_FONT}
+                fontSize={16}
+                fill="#202124"
+              />
+
+              <Text
+                x={285}
+                y={0}
+                text="Spotify"
+                fontFamily={SANS_FONT}
+                fontSize={16}
+                fill="#4a8df6"
+                textDecoration="underline"
+                onMouseEnter={(e) => {
+                  const stage =
+                    e.target.getStage();
+
+                  if (stage) {
+                    stage
+                      .container()
+                      .style.cursor =
+                      "pointer";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  const stage =
+                    e.target.getStage();
+
+                  if (stage) {
+                    stage
+                      .container()
+                      .style.cursor =
+                      "grab";
+                  }
+                }}
+                onClick={() => {
+                  window.open(
+                    SPOTIFY_PLAYLIST_URL,
+                    "_blank",
+                    "noopener,noreferrer"
+                  );
+                }}
+              />
+            </Group>
+
+            {/* Music cards */}
+
+            <Music
+              x={0}
+              y={130}
+            />
           </Group>
 
         </Layer>
