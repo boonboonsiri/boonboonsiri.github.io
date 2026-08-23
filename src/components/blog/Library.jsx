@@ -17,7 +17,9 @@ import {
 } from "react-konva";
 
 import { books } from "../../content/books";
+
 import Book from "./Book";
+import Movie from "./Movie";
 
 import "../../styles/Library.scss";
 
@@ -33,9 +35,9 @@ const SERIF_FONT =
 
 const BOOK_WIDTH = 170;
 const BOOK_HEIGHT = 255;
-
 const BOOK_GAP = 26;
 const BOOKS_PER_ROW = 6;
+
 const ROW_HEIGHT = 330;
 
 const SECTION_PADDING_X = 30;
@@ -52,6 +54,26 @@ const SECTION_WIDTH =
 const INTRO_HEIGHT = 180;
 const SECTION_GAP = 10;
 
+/* ============================================
+ * MOVIE SETTINGS
+ * ============================================ */
+
+const MOVIE_WIDTH = 150;
+const MOVIE_GAP = 22;
+const MOVIES_PER_ROW = 5;
+const MOVIE_ROW_HEIGHT = 315;
+
+const MOVIE_OFFSET_X = 300;
+
+/*
+ * Position of the first row of movies relative
+ * to the movie section's title.
+ */
+const MOVIE_CONTENT_Y = 145;
+
+const LETTERBOXD_URL =
+  "https://letterboxd.com/boonboonsiri/films/by/entry-rating/";
+
 export default function Library() {
   const stageRef = useRef(null);
 
@@ -60,24 +82,17 @@ export default function Library() {
     height: 0,
   });
 
-  /*
-   * The library's world is centered around x = 0.
-   *
-   * The stage itself needs to be positioned at
-   * half the viewport width so x = 0 appears
-   * exactly in the middle of the screen.
-   */
   const [camera, setCamera] = useState({
     x: 0,
     y: 100,
     zoom: 0.5,
   });
 
-  /*
-   * ============================================
+  const [films, setFilms] = useState([]);
+
+  /* ============================================
    * GROUP BOOKS BY SHELF
-   * ============================================
-   */
+   * ============================================ */
 
   const sections = useMemo(() => {
     const order = [];
@@ -98,11 +113,9 @@ export default function Library() {
     }));
   }, []);
 
-  /*
-   * ============================================
-   * BUILD SECTION POSITIONS
-   * ============================================
-   */
+  /* ============================================
+   * BUILD BOOK SECTION POSITIONS
+   * ============================================ */
 
   const sectionItems = useMemo(() => {
     let currentY = INTRO_HEIGHT;
@@ -136,35 +149,136 @@ export default function Library() {
         height,
       };
 
-      currentY +=
-        height + SECTION_GAP;
+      currentY += height + SECTION_GAP;
 
       return result;
     });
   }, [sections]);
 
-  /*
-   * ============================================
+  /* ============================================
+   * FETCH LETTERBOXD MOVIES
+   * ============================================ */
+
+  useEffect(() => {
+    async function fetchFilms() {
+      try {
+        const rssUrl =
+          "https://letterboxd.com/boonboonsiri/rss/";
+
+        const apiUrl =
+          "https://api.rss2json.com/v1/api.json?rss_url=" +
+          encodeURIComponent(rssUrl);
+
+        const res = await fetch(apiUrl);
+
+        if (!res.ok) {
+          throw new Error(
+            `Letterboxd request failed: ${res.status}`
+          );
+        }
+
+        const data = await res.json();
+
+        const items = (data.items || [])
+          .slice(0, 15)
+          .map((item) => {
+            const rawTitle =
+              item.title || "";
+
+            const ratingMatches =
+              rawTitle.match(
+                /★★★★★|★★★★½|★★★★|★★★½|★★★|★★½|★★|★½|★/g
+              ) || [];
+
+            const rating =
+              ratingMatches.length
+                ? ratingMatches.sort(
+                    (a, b) =>
+                      b.length - a.length
+                  )[0]
+                : "";
+
+            const yearMatch =
+              rawTitle.match(
+                /\b(19|20)\d{2}\b/
+              );
+
+            const year = yearMatch
+              ? yearMatch[0]
+              : "";
+
+            const title = rawTitle
+              .replace(
+                /★★★★★|★★★★½|★★★★|★★★½|★★★|★★½|★★|★½|★/g,
+                ""
+              )
+              .replace(
+                /\b(19|20)\d{2}\b/g,
+                ""
+              )
+              .replace(
+                /\s*-\s*/g,
+                " "
+              )
+              .replace(
+                /,/g,
+                " "
+              )
+              .replace(
+                /\s+/g,
+                " "
+              )
+              .trim();
+
+            const imageMatch =
+              (
+                item.description ||
+                ""
+              ).match(
+                /<img[^>]+src="([^"]+)"/i
+              );
+
+            return {
+              title,
+              year,
+              rating,
+              link: item.link,
+              watchedDate: item.pubDate,
+              poster: imageMatch
+                ? imageMatch[1]
+                : "",
+            };
+          });
+
+        setFilms(items);
+      } catch (error) {
+        console.error(
+          "Failed to fetch Letterboxd films:",
+          error
+        );
+      }
+    }
+
+    fetchFilms();
+  }, []);
+
+  /* ============================================
    * RESIZE
-   * ============================================
-   */
+   * ============================================ */
 
   useEffect(() => {
     const resize = () => {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
+      const width =
+        window.innerWidth;
+
+      const height =
+        window.innerHeight;
 
       setSize({
         width,
         height,
       });
 
-      /*
-       * Center the library horizontally.
-       *
-       * The bookshelf is centered around world x = 0,
-       * so the camera's x needs to be half the viewport.
-       */
       setCamera((current) => ({
         ...current,
         x: width / 2,
@@ -186,16 +300,15 @@ export default function Library() {
     };
   }, []);
 
-  /*
-   * ============================================
+  /* ============================================
    * ZOOM
-   * ============================================
-   */
+   * ============================================ */
 
   const handleWheel = (e) => {
     e.evt.preventDefault();
 
-    const stage = stageRef.current;
+    const stage =
+      stageRef.current;
 
     if (!stage) return;
 
@@ -204,7 +317,8 @@ export default function Library() {
 
     if (!pointer) return;
 
-    const oldZoom = camera.zoom;
+    const oldZoom =
+      camera.zoom;
 
     let newZoom =
       e.evt.deltaY > 0
@@ -240,11 +354,9 @@ export default function Library() {
     });
   };
 
-  /*
-   * ============================================
+  /* ============================================
    * PAN
-   * ============================================
-   */
+   * ============================================ */
 
   const handleDragEnd = (e) => {
     setCamera((current) => ({
@@ -253,6 +365,26 @@ export default function Library() {
       y: e.target.y(),
     }));
   };
+
+  /* ============================================
+   * MOVIE POSITION
+   * ============================================ */
+
+  const movieStartX =
+    SECTION_WIDTH / 2 +
+    MOVIE_OFFSET_X;
+
+  const movieGridWidth =
+    MOVIES_PER_ROW *
+      MOVIE_WIDTH +
+    (MOVIES_PER_ROW - 1) *
+      MOVIE_GAP;
+
+  /*
+   * Both Library and Movies use y = 0.
+   * Their headings therefore align exactly.
+   */
+  const movieSectionY = 0;
 
   return (
     <div className="library">
@@ -270,17 +402,14 @@ export default function Library() {
       >
         <Layer>
 
-          {/* ================================== */}
-          {/* INTRO                              */}
-          {/* ================================== */}
+          {/* ==================================
+              LIBRARY INTRO
+              ================================== */}
 
           <Group
             x={-SECTION_WIDTH / 2}
             y={0}
           >
-
-            {/* Library title */}
-
             <Text
               x={0}
               y={28}
@@ -293,8 +422,6 @@ export default function Library() {
               align="left"
             />
 
-            {/* Combined description */}
-
             <Text
               x={0}
               y={92}
@@ -306,12 +433,11 @@ export default function Library() {
               fill="#202124"
               align="left"
             />
-
           </Group>
 
-          {/* ================================== */}
-          {/* SECTIONS                           */}
-          {/* ================================== */}
+          {/* ==================================
+              BOOK SECTIONS
+              ================================== */}
 
           {sectionItems.map(
             (section) => (
@@ -320,7 +446,6 @@ export default function Library() {
                 x={section.x}
                 y={section.y}
               >
-
                 {/* Wooden backboard */}
 
                 <Rect
@@ -405,7 +530,6 @@ export default function Library() {
                         key={rowIndex}
                         y={rowY}
                       >
-
                         {row.map(
                           (
                             book,
@@ -462,15 +586,129 @@ export default function Library() {
                           fill="#9a734f"
                           listening={false}
                         />
-
                       </Group>
                     );
                   }
                 )}
-
               </Group>
             )
           )}
+
+          {/* ==================================
+              MOVIES
+              ================================== */}
+
+          <Group
+            x={movieStartX}
+            y={movieSectionY}
+          >
+            {/* Movies title */}
+
+            <Text
+              x={0}
+              y={28}
+              width={movieGridWidth}
+              text="Movies"
+              fontFamily={SERIF_FONT}
+              fontSize={46}
+              fontStyle="bold"
+              fill="#202124"
+              align="left"
+            />
+
+            {/* Movies description */}
+
+            <Group
+              x={0}
+              y={92}
+            >
+              <Text
+                x={0}
+                y={0}
+                text="Movies I’ve watched recently on my "
+                fontFamily={SANS_FONT}
+                fontSize={16}
+                fill="#202124"
+              />
+
+              <Text
+                x={253}
+                y={0}
+                text="Letterboxd"
+                fontFamily={SANS_FONT}
+                fontSize={16}
+                fill="#4a8df6"
+                textDecoration="underline"
+                onMouseEnter={(e) => {
+                  const stage =
+                    e.target.getStage();
+
+                  if (stage) {
+                    stage
+                      .container()
+                      .style.cursor =
+                      "pointer";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  const stage =
+                    e.target.getStage();
+
+                  if (stage) {
+                    stage
+                      .container()
+                      .style.cursor =
+                      "grab";
+                  }
+                }}
+                onClick={() => {
+                  window.open(
+                    LETTERBOXD_URL,
+                    "_blank",
+                    "noopener,noreferrer"
+                  );
+                }}
+              />
+            </Group>
+
+            {/* Movie cards */}
+
+            {films.map(
+              (film, index) => {
+                const column =
+                  index %
+                  MOVIES_PER_ROW;
+
+                const row =
+                  Math.floor(
+                    index /
+                      MOVIES_PER_ROW
+                  );
+
+                return (
+                  <Movie
+                    key={
+                      film.link ||
+                      `${film.title}-${index}`
+                    }
+                    film={film}
+                    x={
+                      column *
+                      (
+                        MOVIE_WIDTH +
+                        MOVIE_GAP
+                      )
+                    }
+                    y={
+                      MOVIE_CONTENT_Y +
+                      row *
+                        MOVIE_ROW_HEIGHT
+                    }
+                  />
+                );
+              }
+            )}
+          </Group>
 
         </Layer>
       </Stage>
