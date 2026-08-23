@@ -33,6 +33,12 @@ export const books = [
     cover: "https://m.media-amazon.com/images/I/81WY6M9XikL.jpg",
   },
   {
+    title: "Crying in H Mart",
+    author: "Michelle Zauner",
+    shelf: "current",
+    cover: "https://media.npr.org/assets/img/2021/04/19/mart_custom-32d5ea2108d92243d443b714af65c92bc3f6dbd6.jpg",
+  },
+  {
     title: "Babel",
     author: "R.F Kuang",
     shelf: "current",
