@@ -1,7 +1,20 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import { Stage, Layer } from "react-konva";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+
+import {
+  Stage,
+  Layer,
+  Group,
+  Rect,
+  Text,
+  Line,
+} from "react-konva";
 
 import { books } from "../../content/books";
 import Book from "./Book";
@@ -11,6 +24,23 @@ import "../../styles/Library.scss";
 const MIN_ZOOM = 0.25;
 const MAX_ZOOM = 3;
 const ZOOM_SPEED = 1.08;
+
+const BOOK_WIDTH = 170;
+const BOOK_HEIGHT = 255;
+
+const BOOK_GAP = 26;
+const ROW_HEIGHT = 330;
+
+const SECTION_PADDING_X = 30;
+const SECTION_PADDING_TOP = 65;
+const SECTION_PADDING_BOTTOM = 45;
+
+const PLANK_HEIGHT = 20;
+
+/*
+ * How wide each section is.
+ */
+const SECTION_WIDTH = 6 * BOOK_WIDTH + 5 * BOOK_GAP + 60;
 
 export default function Library() {
   const stageRef = useRef(null);
@@ -27,35 +57,83 @@ export default function Library() {
   });
 
   /*
-   * For now, just lay the books out in a grid.
+   * ============================================
+   * GROUP BOOKS INTO SECTIONS
+   * ============================================
    *
-   * These coordinates are WORLD coordinates,
-   * not screen coordinates.
+   * This preserves the first-seen ordering
+   * from your original implementation.
    */
-  const bookItems = useMemo(() => {
-    const columns = 6;
 
-    const horizontalSpacing = 220;
-    const verticalSpacing = 320;
+  const sections = useMemo(() => {
+    const order = [];
+    const map = new Map();
 
-    return books.map((book, index) => ({
-      book,
+    for (const book of books) {
+      if (!map.has(book.shelf)) {
+        map.set(book.shelf, []);
+        order.push(book.shelf);
+      }
 
-      x:
-        (index % columns) *
-          horizontalSpacing -
-        500,
+      map.get(book.shelf).push(book);
+    }
 
-      y:
-        Math.floor(index / columns) *
-          verticalSpacing -
-        300,
+    return order.map((name) => ({
+      name,
+      books: map.get(name),
     }));
   }, []);
 
   /*
-   * Keep the Stage the size of the window.
+   * ============================================
+   * BUILD SECTION POSITIONS
+   * ============================================
    */
+
+  const sectionItems = useMemo(() => {
+    let currentY = 0;
+
+    return sections.map((section) => {
+      const rows = [];
+
+      for (
+        let i = 0;
+        i < section.books.length;
+        i += 6
+      ) {
+        rows.push(
+          section.books.slice(
+            i,
+            i + 6
+          )
+        );
+      }
+
+      const height =
+        SECTION_PADDING_TOP +
+        rows.length * ROW_HEIGHT +
+        SECTION_PADDING_BOTTOM;
+
+      const result = {
+        ...section,
+        x: -SECTION_WIDTH / 2,
+        y: currentY,
+        rows,
+        height,
+      };
+
+      currentY += height + 10;
+
+      return result;
+    });
+  }, [sections]);
+
+  /*
+   * ============================================
+   * WINDOW SIZE
+   * ============================================
+   */
+
   useEffect(() => {
     const resize = () => {
       setSize({
@@ -80,8 +158,11 @@ export default function Library() {
   }, []);
 
   /*
-   * Zoom around the mouse pointer.
+   * ============================================
+   * ZOOM
+   * ============================================
    */
+
   const handleWheel = (e) => {
     e.evt.preventDefault();
 
@@ -103,13 +184,12 @@ export default function Library() {
 
     newZoom = Math.max(
       MIN_ZOOM,
-      Math.min(MAX_ZOOM, newZoom)
+      Math.min(
+        MAX_ZOOM,
+        newZoom
+      )
     );
 
-    /*
-     * Find the world position underneath
-     * the mouse before zooming.
-     */
     const worldX =
       (pointer.x - camera.x) /
       oldZoom;
@@ -118,10 +198,6 @@ export default function Library() {
       (pointer.y - camera.y) /
       oldZoom;
 
-    /*
-     * Keep that world position underneath
-     * the mouse after zooming.
-     */
     setCamera({
       zoom: newZoom,
 
@@ -136,10 +212,11 @@ export default function Library() {
   };
 
   /*
-   * Konva handles the actual dragging.
-   *
-   * We only save the new camera position.
+   * ============================================
+   * PAN
+   * ============================================
    */
+
   const handleDragEnd = (e) => {
     setCamera((current) => ({
       ...current,
@@ -164,14 +241,178 @@ export default function Library() {
         onDragEnd={handleDragEnd}
       >
         <Layer>
-          {bookItems.map((item) => (
-            <Book
-              key={item.book.title}
-              book={item.book}
-              x={item.x}
-              y={item.y}
-            />
-          ))}
+
+          {/* ================================= */}
+          {/* BOOKCASE                          */}
+          {/* ================================= */}
+
+          <Group>
+
+            {sectionItems.map(
+              (section) => (
+                <Group
+                  key={section.name}
+                  x={section.x}
+                  y={section.y}
+                >
+
+                  {/* ========================= */}
+                  {/* SECTION BACKGROUND         */}
+                  {/* ========================= */}
+
+                  <Rect
+                    width={SECTION_WIDTH}
+                    height={section.height}
+                    cornerRadius={8}
+                    fill="#7a5638"
+                    shadowColor="#000"
+                    shadowBlur={25}
+                    shadowOpacity={0.22}
+                    shadowOffsetY={12}
+                    listening={false}
+                  />
+
+                  {/* ========================= */}
+                  {/* WOOD GRAIN                 */}
+                  {/* ========================= */}
+
+                  {Array.from({
+                    length: Math.floor(
+                      section.height / 22
+                    ),
+                  }).map(
+                    (_, index) => (
+                      <Line
+                        key={index}
+                        points={[
+                          0,
+                          index * 22,
+                          SECTION_WIDTH,
+                          index * 22,
+                        ]}
+                        stroke="rgba(255,255,255,0.035)"
+                        strokeWidth={2}
+                        listening={false}
+                      />
+                    )
+                  )}
+
+                  {/* ========================= */}
+                  {/* SECTION LABEL              */}
+                  {/* ========================= */}
+
+                  <Group
+                    x={24}
+                    y={14}
+                    rotation={-2}
+                    listening={false}
+                  >
+                    <Rect
+                      width={145}
+                      height={40}
+                      fill="#fff2a8"
+                      shadowColor="#000"
+                      shadowBlur={8}
+                      shadowOpacity={0.16}
+                      shadowOffsetY={4}
+                    />
+
+                    <Text
+                      x={14}
+                      y={10}
+                      width={117}
+                      text={section.name}
+                      fontSize={16}
+                      fill="#222"
+                      align="center"
+                    />
+                  </Group>
+
+                  {/* ========================= */}
+                  {/* BOOK ROWS                  */}
+                  {/* ========================= */}
+
+                  {section.rows.map(
+                    (row, rowIndex) => {
+                      const rowY =
+                        SECTION_PADDING_TOP +
+                        rowIndex *
+                          ROW_HEIGHT;
+
+                      return (
+                        <Group
+                          key={rowIndex}
+                          y={rowY}
+                        >
+
+                          {row.map(
+                            (
+                              book,
+                              bookIndex
+                            ) => (
+                              <Book
+                                key={`${book.title}-${bookIndex}`}
+                                book={book}
+                                x={
+                                  SECTION_PADDING_X +
+                                  bookIndex *
+                                    (BOOK_WIDTH +
+                                      BOOK_GAP)
+                                }
+                                y={0}
+                              />
+                            )
+                          )}
+
+                          {/* ===================== */}
+                          {/* SHELF PLANK            */}
+                          {/* ===================== */}
+
+                          <Rect
+                            x={0}
+                            y={
+                              BOOK_HEIGHT +
+                              25
+                            }
+                            width={
+                              SECTION_WIDTH
+                            }
+                            height={
+                              PLANK_HEIGHT
+                            }
+                            fill="#7f5c3e"
+                            shadowColor="#000"
+                            shadowBlur={10}
+                            shadowOpacity={0.28}
+                            shadowOffsetY={7}
+                            listening={false}
+                          />
+
+                          <Rect
+                            x={0}
+                            y={
+                              BOOK_HEIGHT +
+                              25
+                            }
+                            width={
+                              SECTION_WIDTH
+                            }
+                            height={4}
+                            fill="#9a734f"
+                            listening={false}
+                          />
+
+                        </Group>
+                      );
+                    }
+                  )}
+
+                </Group>
+              )
+            )}
+
+          </Group>
+
         </Layer>
       </Stage>
     </div>
