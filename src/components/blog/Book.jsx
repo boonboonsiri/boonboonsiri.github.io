@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import {
   Group,
   Image as KonvaImage,
@@ -6,7 +7,11 @@ import {
   Line,
   Text,
 } from "react-konva";
+
 import useImage from "use-image";
+
+const SANS_FONT =
+  'system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif';
 
 const BOOK_WIDTH = 170;
 const BOOK_HEIGHT = 255;
@@ -21,7 +26,25 @@ export default function Book({
   const [hovered, setHovered] =
     useState(false);
 
-  const offsetY = hovered ? -8 : 0;
+  const animateBook = (
+    e,
+    hovering
+  ) => {
+    const group =
+      e.currentTarget;
+
+    group.to({
+      y: hovering ? y - 5 : y,
+      rotation: hovering ? -1 : 0,
+      scaleX: hovering ? 0.98 : 1,
+      scaleY: hovering ? 1.01 : 1,
+      duration: hovering
+        ? 0.12
+        : 0.15,
+      easing:
+        window.Konva.Easings.EaseInOut,
+    });
+  };
 
   return (
     <Group
@@ -30,7 +53,10 @@ export default function Book({
       onMouseEnter={(e) => {
         setHovered(true);
 
-        const stage = e.target.getStage();
+        animateBook(e, true);
+
+        const stage =
+          e.target.getStage();
 
         if (stage) {
           stage.container().style.cursor =
@@ -40,7 +66,10 @@ export default function Book({
       onMouseLeave={(e) => {
         setHovered(false);
 
-        const stage = e.target.getStage();
+        animateBook(e, false);
+
+        const stage =
+          e.target.getStage();
 
         if (stage) {
           stage.container().style.cursor =
@@ -55,27 +84,29 @@ export default function Book({
       }}
     >
       {/* Shadow */}
+
       <Rect
         x={0}
-        y={offsetY}
+        y={0}
         width={BOOK_WIDTH}
         height={BOOK_HEIGHT}
         fill="rgba(0,0,0,0.01)"
         shadowColor="#000"
         shadowBlur={
-          hovered ? 22 : 16
+          hovered ? 19 : 16
         }
         shadowOpacity={0.25}
         shadowOffsetY={
-          hovered ? 12 : 8
+          hovered ? 10 : 8
         }
         listening={false}
       />
 
       {/* Very subtle page edge */}
+
       <Rect
         x={BOOK_WIDTH - 3}
-        y={4 + offsetY}
+        y={4}
         width={7}
         height={BOOK_HEIGHT - 8}
         fill="#e8dfd3"
@@ -86,6 +117,7 @@ export default function Book({
       />
 
       {/* Subtle page lines */}
+
       {Array.from({
         length: 18,
       }).map((_, index) => (
@@ -93,9 +125,9 @@ export default function Book({
           key={index}
           points={[
             BOOK_WIDTH - 2,
-            10 + index * 13 + offsetY,
+            10 + index * 13,
             BOOK_WIDTH + 1,
-            10 + index * 13 + offsetY,
+            10 + index * 13,
           ]}
           stroke="rgba(100,80,60,0.16)"
           strokeWidth={0.5}
@@ -104,18 +136,19 @@ export default function Book({
       ))}
 
       {/* Book cover */}
+
       {image ? (
         <KonvaImage
           image={image}
           x={0}
-          y={offsetY}
+          y={0}
           width={BOOK_WIDTH}
           height={BOOK_HEIGHT}
         />
       ) : (
         <Rect
           x={0}
-          y={offsetY}
+          y={0}
           width={BOOK_WIDTH}
           height={BOOK_HEIGHT}
           fill="#ddd"
@@ -123,9 +156,10 @@ export default function Book({
       )}
 
       {/* Very subtle spine */}
+
       <Rect
         x={0}
-        y={offsetY}
+        y={0}
         width={3}
         height={BOOK_HEIGHT}
         fill="rgba(0,0,0,0.12)"
@@ -133,16 +167,17 @@ export default function Book({
       />
 
       {/* Sticky note */}
+
       {book.note && (
         <Group
           x={BOOK_WIDTH - 66}
-          y={10 + offsetY}
+          y={10}
           rotation={5}
           listening={false}
         >
           <Rect
             width={60}
-            height={45}
+            height={70}
             fill="#fff4a8"
             shadowColor="#000"
             shadowBlur={7}
@@ -154,26 +189,14 @@ export default function Book({
             x={7}
             y={6}
             width={46}
-            height={35}
+            height={70}
             text={book.note}
+            fontFamily={SANS_FONT}
             fontSize={10}
             lineHeight={1.2}
             fill="#222"
           />
         </Group>
-      )}
-
-      {/* Title on hover */}
-      {hovered && (
-        <Text
-          x={0}
-          y={BOOK_HEIGHT + 10}
-          width={BOOK_WIDTH}
-          text={book.title}
-          fontSize={14}
-          fill="#222"
-          align="center"
-        />
       )}
     </Group>
   );
