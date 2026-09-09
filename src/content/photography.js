@@ -166,7 +166,7 @@ export const photos = [
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/tb27ssm6vapwmrfpjydyr/DSC00373.JPG?rlkey=mktlh3z1g63omn6bfqtzzgvbw',
     alt: 'DSC00373',
-    description: "radiant / nara sp'26"
+    description: "enchanting / nara sp'26"
   },
   {
     src: 'https://dl.dropboxusercontent.com/scl/fi/rl3hvcglaiolm0296ggep/DSC00745.JPG?rlkey=2xtknyiipgg5yp8aw90tway67',
