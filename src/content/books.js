@@ -33,6 +33,12 @@ export const books = [
     cover: "https://m.media-amazon.com/images/I/81WY6M9XikL.jpg",
   },
   {
+    title: "Holly Wood, Ending",
+    author: "John Green",
+    shelf: "current",
+    cover: "https://www.indigo.ca/cdn/shop/files/1_059aab8d-175c-47bc-a335-801fb7002e82.jpg?v=1781632919",
+  },
+  {
     title: "Crying in H Mart",
     author: "Michelle Zauner",
     shelf: "current",
